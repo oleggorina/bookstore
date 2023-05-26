@@ -1,1 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+@use "extends" as *;
+@use "variables" as *;
+@use "mixins-media" as *;
+@use "skin" as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500&display=swap');
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-header;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 65px;
+}
+
+h2 {
+  font-size: 55px;
+}
+
+h3 {
+  font-size: 45px;
+}
+
+h4 {
+  font-size: 32px;
+}
+
+h5 {
+  font-size: 25px;
+}
+
+h6 {
+  font-size: 22px;
+}
