@@ -1,1 +1,42 @@
-<p>header works!</p>
+<div class="header">
+  <div class="header__left">
+    <div class="header__left-logo">
+      <app-logo></app-logo>
+    </div>
+    <div class="header__left-socials">
+      <app-social-icon [icon]="facebook"></app-social-icon>
+      <app-social-icon [icon]="twitter"></app-social-icon>
+      <app-social-icon [icon]="linkedin"></app-social-icon>
+    </div>
+  </div>
+  <div class="header__right">
+    <div class="header__right-nav">
+      <a class="link" href="/home">Home</a>
+      <a class="link pages" href="*" (mouseenter)="openDropdown()" (mouseleave)="closeDropdown()">Pages</a>
+      <a class="link" href="/about">About</a>
+      <a class="link" href="/services">Services</a>
+      <a class="link" href="/contact">Contact</a>
+      <div class="dropdown" [class.show]="isDropDownOpen" (mouseenter)="openDropdown()" (mouseleave)="closeDropdown()">
+        <div class="right">
+          <h5>Pages</h5>
+          <a class="link" href="">Articles</a>
+          <a class="link" href="">Our story</a>
+          <a class="link" href="">Product Single</a>
+        </div>
+        <div class="left">
+          <h5>Utility Pages</h5>
+          <a class="link" href="">Style Guide</a>
+          <a class="link" href="">404 Page</a>
+          <a class="link" href="">Password Protected</a>
+          <a class="link" href="">Changelog</a>
+        </div>
+      </div>
+    </div>
+    <div class="header__right-cart">
+      <app-cart></app-cart>
+    </div>
+    <div class="header__right-btn">
+      <app-btn-accent></app-btn-accent>
+    </div>
+  </div>
+</div>

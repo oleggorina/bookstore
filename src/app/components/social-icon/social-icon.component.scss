@@ -1,0 +1,21 @@
+@use "extends" as *;
+@use "variables" as *;
+@use "mixins-media" as *;
+@use "skin" as *;
+
+.social {
+  width: 45px;
+  height: 45px;
+  background-color: $color-light;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    background-color: $color-accent;
+    cursor: pointer;
+  }
+  &__icon {
+    color: $color-primary;
+    font-size: 16px;
+  }
+}

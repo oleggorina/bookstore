@@ -1,0 +1,36 @@
+@use "extends" as *;
+@use "variables" as *;
+@use "mixins-media" as *;
+@use "skin" as *;
+
+
+.cart {
+  position: relative;
+  &__icon {
+    font-size: 22px;
+    color: $color-light;
+    &:hover {
+      cursor: pointer;
+      color: $color-accent;
+    }
+  }
+  &__badge {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 21px;
+    height: 21px;
+    border-radius: 50%;
+    background-color: $color-accent;
+    right: -10px;
+    top: -10px;
+    z-index: 1;
+    &-num {
+      font-family: $font-main;
+      font-weight: 700;
+      color: $color-primary;
+      font-size: 10px;
+    }
+  }
+}

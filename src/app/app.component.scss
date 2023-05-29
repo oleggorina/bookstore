@@ -1,0 +1,17 @@
+@use "extends" as *;
+@use "variables" as *;
+@use "mixins-media" as *;
+@use "skin" as *;
+
+.container {
+  @extend %container;
+  .wrapper {
+    position: absolute;
+    width: 100vw;
+    height: 100px;
+    background-color: $color-primary;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+}
