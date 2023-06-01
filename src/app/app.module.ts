@@ -11,6 +11,17 @@ import { CartComponent } from './components/cart/cart.component';
 import { BtnAccentComponent } from './components/btn-accent/btn-accent.component';
 import { BtnPrimaryComponent } from './components/btn-primary/btn-primary.component';
 import { BurgerComponent } from './components/burger/burger.component';
+import { HomeComponent } from './pages/home/home.component';
+import { AboutComponent } from './pages/about/about.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { ArticlesComponent } from './pages/articles/articles.component';
+import { StoryComponent } from './pages/story/story.component';
+import { ProductComponent } from './pages/product/product.component';
+import { StyleComponent } from './pages/style/style.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { LogInComponent } from './pages/log-in/log-in.component';
+import { ChangelogComponent } from './pages/changelog/changelog.component';
+import { HeroComponent } from './pages/home/components/hero/hero.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +32,18 @@ import { BurgerComponent } from './components/burger/burger.component';
     CartComponent,
     BtnAccentComponent,
     BtnPrimaryComponent,
-    BurgerComponent
+    BurgerComponent,
+    HomeComponent,
+    AboutComponent,
+    ContactComponent,
+    ArticlesComponent,
+    StoryComponent,
+    ProductComponent,
+    StyleComponent,
+    NotFoundComponent,
+    LogInComponent,
+    ChangelogComponent,
+    HeroComponent
   ],
   imports: [
     BrowserModule,

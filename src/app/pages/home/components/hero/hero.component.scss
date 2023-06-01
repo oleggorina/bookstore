@@ -1,0 +1,157 @@
+@use "extends" as *;
+@use "variables" as *;
+@use "mixins-media" as *;
+@use "skin" as *;
+
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "left right";
+  align-items: center;
+  justify-content: center;
+  gap: 54px;
+  padding-top: calc($gap * 2);
+  padding-bottom: calc($gap * 2);
+  @include ul {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+    grid-template-areas: "left" "right";
+    gap: calc($gap * 2);
+  }
+  &__left {
+    grid-area: left;
+    @include ul {
+      justify-self: center;
+      max-width: 575px;
+    }
+    @include lg {
+      justify-self: start;
+    }
+    .welcome {
+      font-family: $font-header;
+      font-size: 24px;
+      font-style: italic;
+      color: white;
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 34px;
+        height: 1px;
+        background-color: $color-accent;
+        margin-right: 15px;
+      }
+    }
+    .title {
+      color: white;
+      margin-bottom: 32px;
+      letter-spacing: -.02em;
+      
+    }
+    .content {
+      margin-bottom: 49px;
+      p {
+        font-family: $font-main;
+        font-size: 19px;
+        color: #B4C7E7;
+        line-height: 1.8em;
+        @include lg {
+          font-size: 18px;
+        }
+        @include md {
+          font-size: 17px;
+        }
+      }
+    }
+    .buttons {
+      display: flex;
+      align-items: center;
+      gap: 37px;
+      margin-bottom: 49px;
+      @include sm {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      &__demo {
+        font-family: $font-header;
+        font-weight: 700;
+        font-size: 19px;
+        position: relative;
+        color: white;
+        height: 30px;
+        cursor: pointer;
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          height: 1px;
+          background-color: white;
+          width: 100%;
+        }
+      }
+    }
+    .description {
+      color: white;
+      font-family: $font-header;
+      font-weight: 700;
+      font-size: 24px;
+      display: flex;
+      gap: 80px;
+      @include lg {
+        flex-direction: column;
+        gap: $gap;
+      }
+      p {
+        font-family: $font-main;
+        font-size: 18px;
+        font-weight: 100;
+        color: #B4C7E7;
+        margin-top: 5px;
+      }
+      &__pages,
+      &__length,
+      &__ratings {
+        position: relative;
+        padding-left: 29px;
+        &::before {
+          content: "";
+          position: absolute;
+          width: 16px;
+          height: 16px;
+          background-color: $color-accent;
+          border-radius: 50%;
+          top: 0;
+          left: 0;
+        }
+      }
+    }
+  }
+  &__right {
+    grid-area: right;
+    justify-self: end;
+    height: 100%;
+    
+    img {
+      @include lg {
+        width: 100%;
+      }
+    }
+    @include ul {
+      justify-self: center;
+    }
+  }
+  &__wrapper {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 100%;
+    background-color: $color-primary;
+    z-index: -1;
+  }
+}

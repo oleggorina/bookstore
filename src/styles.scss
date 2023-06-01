@@ -19,6 +19,15 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 65px;
+  @include lg {
+    font-size: 50px;
+  }
+  @include md {
+    font-size: 45px;
+  }
+  @include sm {
+    font-size: 32px;
+  }
 }
 
 h2 {

@@ -1,5 +1,5 @@
-<div class="wrapper"></div>
 <div class="header">
+  <div class="header__wrapper"></div>
   <div class="header__left">
     <div class="header__left-logo">
       <app-logo></app-logo>
@@ -12,23 +12,22 @@
   </div>
   <div class="header__right">
     <div *ngIf="screenWidth > 992" class="header__right-nav">
-      <a class="link" href="/home">Home</a>
-      <span class="link pages" href="" (mouseenter)="openDropdown()" (mouseleave)="closeDropdown()">Pages</span>
-      <a class="link" href="/about">About</a>
-      <a class="link" href="/contact">Contact</a>
+      <a class="link" routerLink="home">Home</a>
+      <span class="link pages" (mouseenter)="openDropdown()" (mouseleave)="closeDropdown()">Pages</span>
+      <a class="link" routerLink="about">About</a>
+      <a class="link" routerLink="contact">Contact</a>
       <div class="dropdown" [class.show]="isDropDownOpen" (mouseenter)="openDropdown()" (mouseleave)="closeDropdown()">
         <div class="right">
           <h5>Pages</h5>
-          <a class="link" href="">Articles</a>
-          <a class="link" href="">Our story</a>
-          <a class="link" href="">Product Single</a>
+          <a class="link" routerLink="articles">Articles</a>
+          <a class="link" routerLink="story">Our story</a>
+          <a class="link" routerLink="product">Product Single</a>
         </div>
         <div class="left">
           <h5>Utility Pages</h5>
-          <a class="link" href="">Style Guide</a>
-          <a class="link" href="">404 Page</a>
-          <a class="link" href="">Password Protected</a>
-          <a class="link" href="">Changelog</a>
+          <a class="link" routerLink="not-found">404 Page</a>
+          <a class="link" routerLink="log-in">Password Protected</a>
+          <a class="link" routerLink="changelog">Changelog</a>
         </div>
       </div>
     </div>
@@ -41,5 +40,4 @@
     <div *ngIf="screenWidth <= 992" class="header__right-burger">
       <app-burger></app-burger>
     </div>
-  </div>
 </div>

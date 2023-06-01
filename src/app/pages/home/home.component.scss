@@ -2,7 +2,3 @@
 @use "variables" as *;
 @use "mixins-media" as *;
 @use "skin" as *;
-
-.container {
-  @extend %container;
-}
