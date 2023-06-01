@@ -1,0 +1,26 @@
+@use "extends" as *;
+@use "variables" as *;
+@use "mixins-media" as *;
+@use "skin" as *;
+
+.btn {
+  padding: 17px 50px;
+  background-color: transparent;
+  font-family: $font-header;
+  font-weight: bold;
+  font-size: 19px;
+  color: $color-primary;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid $color-accent;
+  @include xl {
+    padding: 15px 25px;
+    font-size: 16px;
+  }
+  &:hover {
+    cursor: pointer;
+    background-color: $color-accent;
+    border: 2px solid $color-accent;
+  }
+}

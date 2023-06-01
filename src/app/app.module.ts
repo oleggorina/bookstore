@@ -22,6 +22,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { LogInComponent } from './pages/log-in/log-in.component';
 import { ChangelogComponent } from './pages/changelog/changelog.component';
 import { HeroComponent } from './pages/home/components/hero/hero.component';
+import { BooksComponent } from './pages/home/components/books/books.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { HeroComponent } from './pages/home/components/hero/hero.component';
     NotFoundComponent,
     LogInComponent,
     ChangelogComponent,
-    HeroComponent
+    HeroComponent,
+    BooksComponent
   ],
   imports: [
     BrowserModule,
