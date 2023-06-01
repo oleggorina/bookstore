@@ -1,0 +1,29 @@
+<div tabindex="0" class="burger" [class.active]="isActive" (click)="activeBurger()">
+  <div class="burger__icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<div class="menu" [class.active]="isActive">
+  <a href="" class="menu__link">Home</a>
+  <a href="" class="menu__link">About</a>
+  <div class="menu__link pages" (click)="activeMenu()">Pages</div>
+  <div class="toggle" *ngIf="isActiveMenu">
+    <div class="toggle__left">
+      <h5>Pages</h5>
+      <a class="menu__link" href="">Articles</a>
+      <a class="menu__link" href="">Our story</a>
+      <a class="menu__link" href="">Product Single</a>
+    </div>
+    <div class="toggle__right">
+      <h5>Utility Pages</h5>
+      <a class="menu__link" href="">Style Guide</a>
+      <a class="menu__link" href="">404 Page</a>
+      <a class="menu__link" href="">Password Protected</a>
+      <a class="menu__link" href="">Changelog</a>
+    </div>
+  </div>
+  <a href="" class="menu__link">Contact</a>
+</div>

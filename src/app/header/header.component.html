@@ -1,3 +1,4 @@
+<div class="wrapper"></div>
 <div class="header">
   <div class="header__left">
     <div class="header__left-logo">
@@ -10,11 +11,10 @@
     </div>
   </div>
   <div class="header__right">
-    <div class="header__right-nav">
+    <div *ngIf="screenWidth > 992" class="header__right-nav">
       <a class="link" href="/home">Home</a>
-      <a class="link pages" href="*" (mouseenter)="openDropdown()" (mouseleave)="closeDropdown()">Pages</a>
+      <span class="link pages" href="" (mouseenter)="openDropdown()" (mouseleave)="closeDropdown()">Pages</span>
       <a class="link" href="/about">About</a>
-      <a class="link" href="/services">Services</a>
       <a class="link" href="/contact">Contact</a>
       <div class="dropdown" [class.show]="isDropDownOpen" (mouseenter)="openDropdown()" (mouseleave)="closeDropdown()">
         <div class="right">
@@ -35,8 +35,11 @@
     <div class="header__right-cart">
       <app-cart></app-cart>
     </div>
-    <div class="header__right-btn">
+    <div *ngIf="screenWidth > 576" class="header__right-btn">
       <app-btn-accent></app-btn-accent>
+    </div>
+    <div *ngIf="screenWidth <= 992" class="header__right-burger">
+      <app-burger></app-burger>
     </div>
   </div>
 </div>

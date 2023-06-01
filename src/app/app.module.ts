@@ -10,6 +10,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CartComponent } from './components/cart/cart.component';
 import { BtnAccentComponent } from './components/btn-accent/btn-accent.component';
 import { BtnPrimaryComponent } from './components/btn-primary/btn-primary.component';
+import { BurgerComponent } from './components/burger/burger.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { BtnPrimaryComponent } from './components/btn-primary/btn-primary.compon
     SocialIconComponent,
     CartComponent,
     BtnAccentComponent,
-    BtnPrimaryComponent
+    BtnPrimaryComponent,
+    BurgerComponent
   ],
   imports: [
     BrowserModule,
