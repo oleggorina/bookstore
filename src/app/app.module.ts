@@ -24,6 +24,7 @@ import { ChangelogComponent } from './pages/changelog/changelog.component';
 import { HeroComponent } from './pages/home/components/hero/hero.component';
 import { BooksComponent } from './pages/home/components/books/books.component';
 import { TitleComponent } from './components/title/title.component';
+import { AuthorComponent } from './pages/home/components/author/author.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { TitleComponent } from './components/title/title.component';
     ChangelogComponent,
     HeroComponent,
     BooksComponent,
-    TitleComponent
+    TitleComponent,
+    AuthorComponent
   ],
   imports: [
     BrowserModule,
