@@ -14,37 +14,42 @@
   &__title {
     grid-area: title;
     justify-self: center;
-    color: $color-primary;
-    position: relative;
-    padding-bottom: 22px;
-    &::after {
-      content: "";
-      position: absolute;
-      width: 55px;
-      height: 2px;
-      bottom: 0;
-      left: 50%;
-      right: 50%;
-      transform: translate(-50%, -50%);
-      background-color: $color-accent;
-    }
   }
   &__content {
     grid-area: content;
-    justify-self: center;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "left right";
-    padding-top: calc($gap * 3);
-    padding-bottom: calc($gap * 3);
-    .left {
+    grid-template-rows: auto;
+    justify-self: center;
+    place-items: center;
+    gap: 66px;
+    @include ul {
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: auto;
+      grid-template-areas: "left" "right";
+    }
+    .left,
+    .right {
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: auto;
       grid-template-areas: "image content";
+      gap: calc($gap * 2);
+      @include lg {
+        grid-template-columns: 0.75fr;
+        grid-template-rows: max-content max-content;
+        grid-template-areas: "image" "content";
+        gap: $gap;
+        justify-content: center;
+      }
+      @include md {
+        grid-template-columns: 1fr;
+      }
       &__image {
         grid-area: image;
-        align-self: center;
+        display: flex;
+        align-items: center;
         img {
           width: 100%;
         }
@@ -55,6 +60,9 @@
         flex-direction: column;
         justify-content: center;
         gap: $gap;
+        @include lg {
+          justify-content: flex-start;
+        }
         &-title {
           color: $color-primary;
         }
@@ -68,18 +76,41 @@
         }
         &-description {
           display: flex;
-          // margin-bottom: 30px;
+          justify-content: space-between;
+          @include ul {
+            justify-content: flex-start;
+            gap: $gap;
+          }
+          .pages,
+          .length {
+            position: relative;
+            font-size: 24px;
+            color: $color-primary;
+            font-family: $font-header;
+            font-weight: 700;
+            padding-left: 25px;
+            &::before {
+              content: "";
+              position: absolute;
+              width: 16px;
+              height: 16px;
+              background-color: $color-accent;
+              border-radius: 50%;
+              top: 7px;
+              left: 0;
+            }
+            p {
+              font-size: 18px;
+              color: #969AA0;
+              font-family: $font-main;
+              font-weight: 100;
+            }
+          }
         }
         &-btn {
           display: flex;
         }
       }
-    }
-    .right {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: auto;
-      grid-template-areas: "image content";
     }
   }
 }

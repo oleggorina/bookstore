@@ -23,6 +23,7 @@ import { LogInComponent } from './pages/log-in/log-in.component';
 import { ChangelogComponent } from './pages/changelog/changelog.component';
 import { HeroComponent } from './pages/home/components/hero/hero.component';
 import { BooksComponent } from './pages/home/components/books/books.component';
+import { TitleComponent } from './components/title/title.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { BooksComponent } from './pages/home/components/books/books.component';
     LogInComponent,
     ChangelogComponent,
     HeroComponent,
-    BooksComponent
+    BooksComponent,
+    TitleComponent
   ],
   imports: [
     BrowserModule,

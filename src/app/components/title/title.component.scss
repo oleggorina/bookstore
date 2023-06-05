@@ -1,0 +1,21 @@
+@use "extends" as *;
+@use "variables" as *;
+@use "mixins-media" as *;
+@use "skin" as *;
+
+.title {
+    color: $color-primary;
+    position: relative;
+    padding-bottom: 22px;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 55px;
+      height: 2px;
+      bottom: 0;
+      left: 50%;
+      right: 50%;
+      transform: translate(-50%, -50%);
+      background-color: $color-accent;
+    }
+}

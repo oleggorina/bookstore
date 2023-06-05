@@ -40,10 +40,22 @@ h2 {
 
 h3 {
   font-size: 45px;
+  @include lg {
+    font-size: 36px;
+  }
+  @include md {
+    font-size: 32px;
+  }
+  @include sm {
+    font-size: 28px;
+  }
 }
 
 h4 {
   font-size: 32px;
+  @include md {
+    font-size: 24px;
+  }
 }
 
 h5 {
