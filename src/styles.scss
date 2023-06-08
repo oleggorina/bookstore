@@ -28,6 +28,7 @@ h6 {
 
 h1 {
   font-size: 65px;
+  color: white;
 
   @include lg {
     font-size: 50px;
@@ -76,9 +77,12 @@ h5 {
 
 h6 {
   font-size: 22px;
+  @include md {
+    font-size: 20px;
+  }
 }
 
-p {
+p, span {
   font-family: $font-main;
   font-size: 19px;
   color: #969AA0;

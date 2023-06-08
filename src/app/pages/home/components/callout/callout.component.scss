@@ -1,0 +1,41 @@
+@use "extends" as *;
+@use "variables" as *;
+@use "mixins-media" as *;
+@use "skin" as *;
+
+.callout {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: calc($gap * 2);
+  padding-bottom: calc($gap * 2);
+  @include lg {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $gap;
+  }
+  &__left {
+    display: flex;
+    flex-direction: column;
+    gap: $gap;
+    &-btn {
+      display: flex;
+    }
+  }
+  &__right {
+    img {
+      width: 100%;
+    }
+  }
+  &__wrapper {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 100%;
+    background-color: $color-primary;
+    z-index: -1;
+  }
+}

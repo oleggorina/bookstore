@@ -16,7 +16,7 @@
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
     grid-template-areas: "image" "content";
-    gap: $gap;
+    gap: calc($gap * 4);
     padding-top: 75px;
     padding-bottom: 75px;
     margin-top: 50px;
@@ -57,16 +57,71 @@
     .counter {
       display: flex;
       justify-content: space-between;
-      &:first-child {
-        position: relative;
-        &::after {
-          content: "";
-          position: absolute;
-          height: 100%;
-          width: 1px;
-          right: 0;
-          top: 0;
-          background-color: $color-accent;
+      @include md {
+        flex-direction: column;
+      }
+      div {
+        &:nth-child(2),
+        &:nth-child(3) {
+          position: relative;
+          padding-left: 35px;
+          @include md {
+            padding-left: 0;
+          }
+          &::before {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 1px;
+            height: 100%;
+            background-color: $color-accent;
+            transform: translate(50%, 0);
+            @include md {
+              display: none;
+            }
+          }
+          &::before {
+            left: 0;
+          }
+        }
+      }
+    }
+    .contact {
+      display: flex;
+      gap: calc($gap * 2);
+      background-color: $color-primary;
+      padding: 15px 18px;
+      width: max-content;
+      @include sm {
+        flex-direction: column;
+        align-items: center;
+      }
+      &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        &-item {
+          display: flex;
+          @include sm {
+            flex-direction: column;
+          }
+          h6 {
+            color: $color-accent;
+          }
+          a {
+            text-decoration: none;
+            font-family: $font-main;
+            font-size: 19px;
+            color: #969AA0;
+            font-weight: 400;
+            line-height: 180%;
+            letter-spacing: -0.01em;
+
+            @include sm {
+              font-size: 17px;
+            }
+          }
         }
       }
     }

@@ -1,0 +1,107 @@
+@use "extends" as *;
+@use "variables" as *;
+@use "mixins-media" as *;
+@use "skin" as *;
+
+.learn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc($gap * 2.5);
+  margin-top: 150px;
+  margin-bottom: 150px;
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "items image";
+    align-items: center;
+    gap: calc($gap * 4);
+    @include ul {
+      grid-template-columns: 1fr;
+      grid-template-areas: "image" "items";
+    }
+    @include lg {
+      grid-template-areas: "items" "image";
+    }
+
+    &-items {
+      grid-area: items;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: calc($gap * 1.5);
+      @include lg {
+        grid-template-columns: 1fr;
+      }
+
+      .item {
+        display: flex;
+        flex-direction: column;
+        gap: calc($gap * 2);
+        padding: 40px 30px;
+        background-color: #F4F8FF;
+
+        &__badge {
+          color: $color-primary;
+          position: relative;
+          width: 50px;
+          height: 50px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          h6 {
+            z-index: 1;
+          }
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: $color-accent;
+          }
+        }
+
+        &__text {
+          color: $color-primary;
+        }
+      }
+    }
+
+    &-image {
+      grid-area: image;
+      position: relative;
+
+      @include ul {
+        justify-self: center;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        box-sizing: border-box;
+        bottom: 0;
+        right: 0;
+        border: 10px solid $color-accent;
+        width: 100%;
+        height: 100%;
+        transform: translate(5%, 5%);
+        z-index: -1;
+
+        @include lg {
+          transform: translate(0);
+          z-index: 1;
+        }
+      }
+
+      img {
+        width: 100%;
+        display: inline-block;
+      }
+    }
+  }
+}

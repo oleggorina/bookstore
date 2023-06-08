@@ -25,6 +25,9 @@ import { HeroComponent } from './pages/home/components/hero/hero.component';
 import { BooksComponent } from './pages/home/components/books/books.component';
 import { TitleComponent } from './components/title/title.component';
 import { AuthorComponent } from './pages/home/components/author/author.component';
+import { TrustedComponent } from './pages/home/components/trusted/trusted.component';
+import { CalloutComponent } from './pages/home/components/callout/callout.component';
+import { LearnComponent } from './pages/home/components/learn/learn.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +52,10 @@ import { AuthorComponent } from './pages/home/components/author/author.component
     HeroComponent,
     BooksComponent,
     TitleComponent,
-    AuthorComponent
+    AuthorComponent,
+    TrustedComponent,
+    CalloutComponent,
+    LearnComponent
   ],
   imports: [
     BrowserModule,

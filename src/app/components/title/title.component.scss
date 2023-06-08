@@ -7,6 +7,9 @@
   color: $color-primary;
   position: relative;
   padding-bottom: 22px;
+  @include sm {
+    text-align: center;
+  }
 
   &::after {
     content: "";
@@ -19,12 +22,21 @@
     transform: translate(-50%, -50%);
     background-color: $color-accent;
   }
-}
-
-.left {
-  &::after {
-    bottom: 0;
-    left: 0;
-    transform: translateY(50%);
+  &.left {
+    text-align: start;
+    &::after {
+      bottom: 0;
+      left: 0;
+      transform: translateY(50%);
+    }
+  }
+  &.white {
+    color: white;
+  }
+  &.primary {
+    color: $color-primary;
   }
 }
+
+
+

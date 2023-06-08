@@ -8,4 +8,5 @@ import { Component, Input } from '@angular/core';
 export class TitleComponent {
   @Input() title: string = '';
   @Input() linePosition: string = '';
+  @Input() textColor: string = '';
 }
