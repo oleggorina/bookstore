@@ -1,0 +1,45 @@
+@use "extends" as *;
+@use "variables" as *;
+@use "mixins-media" as *;
+@use "skin" as *;
+
+
+.review {
+  padding: calc($gap * 1.5);
+  background-color: $color-primary;
+  width: 370px;
+  height: 310px;
+  display: grid;
+  align-items: center;
+  gap: $gap;
+  @include ul {
+    width: 100%;
+    height: 100%;
+  }
+  @include sm {
+    gap: calc($gap / 2);
+  }
+  &__title {
+    display: flex;
+    gap: $gap;
+    align-items: center;
+    @include sm {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: calc($gap / 2);
+    }
+    &-name {
+      color: white;
+      .stars {
+        display: flex;
+      }
+    }
+  }
+  &__content {
+    display: grid;
+    gap: calc($gap / 2);
+    &-title {
+      color: white;
+    }
+  }
+}

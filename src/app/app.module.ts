@@ -28,6 +28,10 @@ import { AuthorComponent } from './pages/home/components/author/author.component
 import { TrustedComponent } from './pages/home/components/trusted/trusted.component';
 import { CalloutComponent } from './pages/home/components/callout/callout.component';
 import { LearnComponent } from './pages/home/components/learn/learn.component';
+import { ChapterComponent } from './pages/home/components/chapter/chapter.component';
+import { TestimonialComponent } from './pages/home/components/testimonial/testimonial.component';
+import { RatingsComponent } from './components/ratings/ratings.component';
+import { ReviewComponent } from './pages/home/components/testimonial/review/review.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +59,11 @@ import { LearnComponent } from './pages/home/components/learn/learn.component';
     AuthorComponent,
     TrustedComponent,
     CalloutComponent,
-    LearnComponent
+    LearnComponent,
+    ChapterComponent,
+    TestimonialComponent,
+    RatingsComponent,
+    ReviewComponent
   ],
   imports: [
     BrowserModule,

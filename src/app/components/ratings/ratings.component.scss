@@ -1,0 +1,13 @@
+@use "extends" as *;
+@use "variables" as *;
+@use "mixins-media" as *;
+@use "skin" as *;
+
+.ratings {
+  &__star {
+    color: gray;
+    &.filled {
+      color: $color-accent;
+    }
+  }
+}

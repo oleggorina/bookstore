@@ -7,4 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class BtnAccentComponent {
   @Input() btnText = 'Order Today';
+  @Input() textColor: string = '';
 }

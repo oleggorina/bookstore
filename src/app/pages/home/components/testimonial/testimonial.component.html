@@ -1,0 +1,22 @@
+<div class="testimonial">
+  <div class="testimonial__left">
+    <div class="testimonial__left-title">
+      <app-title [title]="'What Readers Say About the Book'" [linePosition]="'left'"></app-title>
+    </div>
+    <div class="testimonial__left-text">
+      <p>If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators.</p>
+    </div>
+    <div class="testimonial__left-ratings">
+      <div class="star">
+        <app-ratings *ngFor="let star of stars" [filled]="star"></app-ratings>
+        <h6>(4.8/5)</h6>
+      </div>
+      <div class="text">Overall Customer Ratings</div>
+    </div>
+  </div>
+  <div class="testimonial__right">
+    <div class="testimonial__right-item" *ngFor="let item of reviewData.slice(-3)">
+      <app-review [image]="item.image" [name]="item.name" [title]="item.title" [text]="item.text" [rating]="item.rating"></app-review>
+    </div>
+  </div>
+</div>

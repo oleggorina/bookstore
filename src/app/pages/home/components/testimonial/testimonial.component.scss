@@ -1,0 +1,70 @@
+@use "extends" as *;
+@use "variables" as *;
+@use "mixins-media" as *;
+@use "skin" as *;
+
+.testimonial {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+  grid-template-areas: "left right";
+  gap: calc($gap * 5);
+  padding-top: 150px;
+  padding-bottom: 150px;
+  @include ul {
+    grid-template-columns: 1fr;
+    grid-template-areas: "left" "right";
+  }
+  &__left {
+    grid-area: left;
+    justify-self: start;
+    display: grid;
+    gap: $gap;
+    align-self: center;
+    &-title {
+      @include ul {
+        text-align: start;
+      }
+    }
+    &-ratings {
+      .star {
+        display: flex;
+        align-items: center;
+        h6 {
+          color: $color-primary;
+          margin-left: calc($gap / 2);
+        }
+      }
+      .text {
+        font-family: $font-main;
+        font-size: 19px;
+        color: $color-primary;
+      }
+    }
+  }
+  &__right {
+    grid-area: right;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "first third" "second third";
+    gap: calc($gap * 1.5);
+    @include ul {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3, 1fr);
+      grid-template-areas: "first" "second" "third";
+    }
+    &-item {
+      justify-self: start;
+      &:first-child {
+        grid-area: first;
+      }
+      &:nth-child(2) {
+        grid-area: second;
+      }
+      &:nth-child(3) {
+        grid-area: third;
+        align-self: center;
+      }
+    }
+  }
+}
