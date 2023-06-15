@@ -8,4 +8,5 @@ import { faFacebookF } from '@fortawesome/free-brands-svg-icons';
 })
 export class SocialIconComponent {
   @Input() icon = faFacebookF;
+  @Input() position: string =  '';
 }

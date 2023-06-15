@@ -1,0 +1,21 @@
+<div class="article">
+  <div class="article__image">
+    <img src="{{image}}" alt="">
+  </div>
+  <div class="article__content">
+    <div class="article__content-title">
+      <h5>{{title}}</h5>
+    </div>
+    <div class="article__content-text">
+      <p>{{text}}</p>
+    </div>
+    <div class="article__content-controls">
+      <div class="link">
+        <app-link [text]="'Read more'" [color]="'primary'"></app-link>
+      </div>
+      <div class="date">
+        <span>{{author}} - {{date | date: 'mediumDate' }}</span>
+      </div>
+    </div>
+  </div>
+</div>

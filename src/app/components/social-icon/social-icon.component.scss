@@ -25,4 +25,16 @@
       font-size: 14px;
     }
   }
+  &.footer {
+    width: 55px;
+    height: 55px;
+    background-color: transparent;
+    border: 1px solid $color-accent;
+    &:hover {
+      background-color: $color-accent;
+    }
+    fa-icon {
+      color: white;
+    }
+  }
 }

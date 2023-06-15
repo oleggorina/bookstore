@@ -36,6 +36,12 @@
   &.primary {
     color: $color-primary;
   }
+  &.primary-line {
+    color: $color-primary;
+    &::after {
+      background-color: $color-primary;
+    }
+  }
 }
 
 

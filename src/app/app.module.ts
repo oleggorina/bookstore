@@ -32,6 +32,11 @@ import { ChapterComponent } from './pages/home/components/chapter/chapter.compon
 import { TestimonialComponent } from './pages/home/components/testimonial/testimonial.component';
 import { RatingsComponent } from './components/ratings/ratings.component';
 import { ReviewComponent } from './pages/home/components/testimonial/review/review.component';
+import { BlogComponent } from './pages/home/components/blog/blog.component';
+import { ArticleCardComponent } from './components/article-card/article-card.component';
+import { LinkComponent } from './components/link/link.component';
+import { SubscribeComponent } from './components/subscribe/subscribe.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +68,12 @@ import { ReviewComponent } from './pages/home/components/testimonial/review/revi
     ChapterComponent,
     TestimonialComponent,
     RatingsComponent,
-    ReviewComponent
+    ReviewComponent,
+    BlogComponent,
+    ArticleCardComponent,
+    LinkComponent,
+    SubscribeComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

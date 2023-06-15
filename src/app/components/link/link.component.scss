@@ -1,0 +1,42 @@
+@use "extends" as *;
+@use "variables" as *;
+@use "mixins-media" as *;
+@use "skin" as *;
+
+.link {
+  font-family: $font-header;
+  font-weight: 700;
+  font-size: 19px;
+  position: relative;
+  height: 30px;
+  cursor: pointer;
+  &:hover {
+    color: $color-accent;
+    &::after {
+      background-color: $color-accent
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 100%;
+  }
+}
+
+.white {
+  color: white;
+  &::after {
+    background-color: white;
+  }
+}
+
+.primary {
+  color: $color-primary;
+  &::after {
+    background-color: $color-primary;
+  }
+}

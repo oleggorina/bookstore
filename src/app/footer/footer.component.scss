@@ -1,0 +1,77 @@
+@use "extends" as *;
+@use "variables" as *;
+@use "mixins-media" as *;
+@use "skin" as *;
+
+.footer {
+  position: relative;
+  padding: 85px 0px;
+  display: flex;
+  justify-content: space-between;
+  @include lg {
+    flex-direction: column;
+    gap: calc($gap * 3);
+  }
+  &__logo {
+    display: flex;
+    flex-direction: column;
+    gap: $gap;
+    .social {
+      display: flex;
+      gap: 10px;
+      @include sm {
+        gap: 5px;
+      }
+    }
+  }
+  &__links {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    gap: $gap;
+    h5 {
+      margin-bottom: $gap;
+    }
+    &-link {
+      display: flex;
+      align-items: center;
+      gap: $gap;
+      text-decoration: none;
+      color: #B4C7E7;
+      font-family: $font-main;
+      font-size: 18px;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+    }
+    &-adress {
+      display: flex;
+      gap: calc($gap / 2);
+      span {
+        font-family: $font-header;
+        color: white;
+        font-size: 18px;
+        font-weight: 700;
+      }
+      p {
+        font-family: $font-main;
+        font-size: 18px;
+        font-weight: 400;
+        color: #B4C7E7;
+      }
+    }
+  }
+  &__adress {
+    display: flex;
+    flex-direction: column;
+  }
+  &__wrapper {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 100%;
+    background-color: $color-primary;
+    z-index: -1;
+  }
+}
