@@ -1,0 +1,29 @@
+@use "extends" as *;
+@use "variables" as *;
+@use "mixins-media" as *;
+@use "skin" as *;
+
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex-direction: column;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  gap: $gap;
+  &__text {
+    max-width: 600px;
+    text-align: center;
+  }
+  &__wrapper {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 100%;
+    background-color: $color-primary;
+    z-index: -1;
+  }
+}

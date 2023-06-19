@@ -73,6 +73,9 @@ h4 {
 
 h5 {
   font-size: 25px;
+  @include md {
+    font-size: 22px;
+  }
 }
 
 h6 {
@@ -92,5 +95,15 @@ p, span {
 
   @include sm {
     font-size: 17px;
+  }
+}
+
+section {
+  padding: 110px 0 110px 0;
+  @include lg {
+    padding: 80px 0 80px 0;
+  }
+  @include md {
+    padding: 60px 0 60px 0;
   }
 }

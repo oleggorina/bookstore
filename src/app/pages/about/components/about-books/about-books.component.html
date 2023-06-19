@@ -1,0 +1,13 @@
+<section class="books">
+  <div class="books__wrapper"></div>
+  <div class="books__title">
+    <app-title [title]="'Author\'s Book Includes'"></app-title>
+  </div>
+  <div class="books__items">
+    <div class="books__items-item" *ngFor="let product of sortedData">
+      <app-product [productTitle]="product.title" [productDescr]="product.descr"
+      [productPrice]="product.price" [productType]="product.type"
+      [productImage]="product.image"></app-product>
+    </div>
+  </div>
+</section>

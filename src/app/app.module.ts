@@ -16,7 +16,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { ArticlesComponent } from './pages/articles/articles.component';
 import { StoryComponent } from './pages/story/story.component';
-import { ProductComponent } from './pages/product/product.component';
+import { ProductComponent } from './components/product/product.component';
 import { StyleComponent } from './pages/style/style.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { LogInComponent } from './pages/log-in/log-in.component';
@@ -25,7 +25,7 @@ import { HeroComponent } from './pages/home/components/hero/hero.component';
 import { BooksComponent } from './pages/home/components/books/books.component';
 import { TitleComponent } from './components/title/title.component';
 import { AuthorComponent } from './pages/home/components/author/author.component';
-import { TrustedComponent } from './pages/home/components/trusted/trusted.component';
+import { TrustedComponent } from './components/trusted/trusted.component';
 import { CalloutComponent } from './pages/home/components/callout/callout.component';
 import { LearnComponent } from './pages/home/components/learn/learn.component';
 import { ChapterComponent } from './pages/home/components/chapter/chapter.component';
@@ -37,6 +37,10 @@ import { ArticleCardComponent } from './components/article-card/article-card.com
 import { LinkComponent } from './components/link/link.component';
 import { SubscribeComponent } from './components/subscribe/subscribe.component';
 import { FooterComponent } from './footer/footer.component';
+import { BannerComponent } from './components/banner/banner.component';
+import { AboutAuthorComponent } from './pages/about/components/about-author/about-author.component';
+import { AboutStoryComponent } from './pages/about/components/about-story/about-story.component';
+import { AboutBooksComponent } from './pages/about/components/about-books/about-books.component';
 
 @NgModule({
   declarations: [
@@ -73,7 +77,11 @@ import { FooterComponent } from './footer/footer.component';
     ArticleCardComponent,
     LinkComponent,
     SubscribeComponent,
-    FooterComponent
+    FooterComponent,
+    BannerComponent,
+    AboutAuthorComponent,
+    AboutStoryComponent,
+    AboutBooksComponent
   ],
   imports: [
     BrowserModule,

@@ -7,7 +7,6 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LogInComponent } from './pages/log-in/log-in.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
-import { ProductComponent } from './pages/product/product.component';
 import { StoryComponent } from './pages/story/story.component';
 
 const routes: Routes = [
@@ -18,7 +17,6 @@ const routes: Routes = [
   {path: 'contact', component: ContactComponent},
   {path: 'log-in', component: LogInComponent},
   {path: 'changelog', component: ChangelogComponent},
-  {path: 'product', component: ProductComponent},
   {path: 'story', component: StoryComponent},
   {path: 'not-found', component: NotFoundComponent}
 ];
