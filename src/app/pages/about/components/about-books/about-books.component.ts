@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ArrayFilterService } from 'src/app/services/array-filter.service';
 import { IProduct } from 'src/app/shared/product.class';
 import { PRODUCT_DATA } from 'src/app/shared/product.const';
 
@@ -12,7 +13,7 @@ export class AboutBooksComponent {
  selectedItem: string = 'Printed Book';
 
  sortedData: any[] = [];
- constructor() {
-  this.sortedData = this.productData.filter(item => item.type === 'Printed Book');
+ constructor(private arrayFilterService: ArrayFilterService) {
+  this.sortedData = this.arrayFilterService.filterArray(this.productData, this.selectedItem);
  }
 }
