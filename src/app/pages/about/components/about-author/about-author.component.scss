@@ -49,6 +49,16 @@
         justify-content: space-between;
         @include sm {
           flex-direction: column;
+          gap: $gap;
+        }
+        .socials {
+          display: flex;
+          gap: $gap;
+          font-size: $gap;
+          a {
+            color: $color-primary;
+            text-decoration: none;
+          }
         }
       }
     }

@@ -4,9 +4,13 @@
 @use "skin" as *;
 
 .product {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: calc($gap * 2);
+  @include md {
+    grid-template-columns: 1fr;
+  }
   &__image {
     img {
       width: 100%;
@@ -20,6 +24,10 @@
     gap: $gap;
     &-title {
       color: $color-primary;
+      span {
+        color: $color-accent;
+        font-weight: bold;
+      }
     }
     &-type {
       color: $color-primary;

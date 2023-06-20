@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { faFacebookF, faTwitter, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 
 @Component({
   selector: 'app-about-author',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./about-author.component.scss']
 })
 export class AboutAuthorComponent {
-
+  facebook = faFacebookF;
+  twitter = faTwitter;
+  linkedin = faLinkedinIn;
 }
