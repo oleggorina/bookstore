@@ -8,8 +8,6 @@
   grid-template-columns: 0.5fr 1fr;
   grid-template-areas: "left right";
   gap: calc($gap * 5);
-  padding-top: 150px;
-  padding-bottom: 150px;
   @include ul {
     grid-template-columns: 1fr;
     grid-template-areas: "left" "right";

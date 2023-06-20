@@ -4,7 +4,6 @@
 @use "skin" as *;
 
 .books {
-  position: relative;
   display: grid;
   gap: calc($gap * 4);
   &__title {

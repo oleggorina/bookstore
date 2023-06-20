@@ -8,8 +8,6 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-areas: "title" "content";
-  padding-top: calc($gap * 7.5);
-  padding-bottom: calc($gap * 7.5);
   gap: calc($gap * 2.5);
   &__title {
     grid-area: title;
