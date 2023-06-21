@@ -15,7 +15,6 @@ import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { ArticlesComponent } from './pages/articles/articles.component';
-import { StoryComponent } from './pages/story/story.component';
 import { ProductComponent } from './components/product/product.component';
 import { StyleComponent } from './pages/style/style.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
@@ -41,6 +40,9 @@ import { BannerComponent } from './components/banner/banner.component';
 import { AboutAuthorComponent } from './pages/about/components/about-author/about-author.component';
 import { AboutStoryComponent } from './pages/about/components/about-story/about-story.component';
 import { AboutBooksComponent } from './pages/about/components/about-books/about-books.component';
+import { StoreComponent } from './pages/store/store.component';
+import { StoreProductsComponent } from './pages/store/components/store-products/store-products.component';
+import { ProductStoreComponent } from './components/product-store/product-store.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +58,6 @@ import { AboutBooksComponent } from './pages/about/components/about-books/about-
     AboutComponent,
     ContactComponent,
     ArticlesComponent,
-    StoryComponent,
     ProductComponent,
     StyleComponent,
     NotFoundComponent,
@@ -81,7 +82,10 @@ import { AboutBooksComponent } from './pages/about/components/about-books/about-
     BannerComponent,
     AboutAuthorComponent,
     AboutStoryComponent,
-    AboutBooksComponent
+    AboutBooksComponent,
+    StoreComponent,
+    StoreProductsComponent,
+    ProductStoreComponent
   ],
   imports: [
     BrowserModule,

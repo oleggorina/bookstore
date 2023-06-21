@@ -7,7 +7,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LogInComponent } from './pages/log-in/log-in.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
-import { StoryComponent } from './pages/story/story.component';
+import { StoreComponent } from './pages/store/store.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -17,7 +17,7 @@ const routes: Routes = [
   {path: 'contact', component: ContactComponent},
   {path: 'log-in', component: LogInComponent},
   {path: 'changelog', component: ChangelogComponent},
-  {path: 'story', component: StoryComponent},
+  {path: 'store', component: StoreComponent},
   {path: 'not-found', component: NotFoundComponent}
 ];
 

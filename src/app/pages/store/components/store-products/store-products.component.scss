@@ -1,0 +1,15 @@
+@use "extends" as *;
+@use "variables" as *;
+@use "mixins-media" as *;
+@use "skin" as *;
+
+.products {
+  &__items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: calc($gap * 2);
+    @include md {
+      grid-template-columns: 1fr;
+    }
+  }
+}
