@@ -1,5 +1,5 @@
 <div class="product">
-  <div class="product__image">
+  <div class="product__image" routerLink="product-details">
     <div class="product__image-container">
       <div class="main">
         <img src="{{productImage}}" alt="">
@@ -10,7 +10,7 @@
   </div>
   <div class="product__content">
     <div class="product__content-title">
-      <h4>{{productTitle}}</h4>
+      <a routerLink="/product-details/{{productID}}"><h4>{{productTitle}}</h4></a>
       <span>{{productPrice | currency}}</span>
     </div>
     <div class="product__content-description">

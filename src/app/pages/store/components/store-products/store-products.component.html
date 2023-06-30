@@ -1,8 +1,9 @@
 <section class="products">
   <div class="products__items">
-    <div class="store__items-item" *ngFor="let item of product">
+    <div class="store__items-item" *ngFor="let item of products">
       <app-product-store [productTitle]="item.title" [productImage]="item.image"
-      [productPrice]="item.price" [productDescr]="item.descr" [productType]="item.type" [flag]="flag"></app-product-store>
+      [productPrice]="item.price" [productDescr]="item.descr" [productType]="item.type"
+      [productID]="item.id"></app-product-store>
     </div>
   </div>
 </section>

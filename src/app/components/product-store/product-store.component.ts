@@ -12,5 +12,5 @@ export class ProductStoreComponent {
   @Input() productDescr: string = '';
   @Input() productType: string = '';
   @Input() classType: string = '';
-  @Input() flag: boolean = false;
+  @Input() productID: number = 0;
 }

@@ -1,0 +1,14 @@
+<div class="description">
+  <div class="description__btns">
+    <div class="description__btns-item" [class.active]="isActive" (click)="isActive = true">Product Description</div>
+    <div class="description__btns-item" [class.active]="!isActive" (click)="isActive = false">Additional Info</div>
+  </div>
+  <div class="description__content">
+    <div class="description__content-info" *ngIf="isActive">
+      <p>Nowadays English language section is asked in almost all competitive and recruitment examinations like SSC, Banking, CDS, State Level PSCs, etc. Otherwise too, being proficient in English is necessary in this fast-modernizing world of disruptive innovation via the workplace.</p>
+    </div>
+    <div class="description__content-info" *ngIf="!isActive">
+      <p>This book has been designed to act as a comprehensive guide to learning English Grammar & Composition. The present book for English Grammar is divided into Articles, Noun, Pronoun, Adverbs, Participle, Gerund, Preposition, Conjunctions disruptive innovation via the workplace.</p>
+    </div>
+  </div>
+</div>

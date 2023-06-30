@@ -1,0 +1,32 @@
+<section class="product">
+  <div class="product__image">
+    <div class="product__image-container">
+      <div class="main">
+        <img src="{{product.image}}" alt="{{product.image}}">
+        <img class="audio" [class.active]="product.type === 'Audio'" src="../../../assets/images/product/Audio.svg" alt="">
+        <img class="cd" [class.active]="product.type === 'Audio CD + Printed Book'" src="../../../assets/images/product/cd.svg" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="product__content">
+    <div class="product__content-title">
+      <h4>{{product.title}}</h4>
+      <span>{{product.price | currency}}</span>
+    </div>
+    <div class="product__content-text">
+      <p>{{product.text}}</p>
+    </div>
+    <div class="product__content-descr">
+      <div class="item"><div><p>Book Type:</p></div><span> {{product.type}}</span></div>
+      <div class="item"><div><p>Publisher:</p></div><span> {{product.publisher}}</span></div>
+      <div class="item"><div><p>Language:</p></div><span> {{product.language}}</span></div>
+      <div class="item"><div><p>Paperback:</p></div><span> {{product.paperback}}</span></div>
+      <div class="item"><div><p>ISBN-10:</p></div><span> {{product.isbn}}</span></div>
+      <div class="item"><div><p>Dimensions:</p></div><span> {{product.dimensions}}</span></div>
+    </div>
+    <div class="product__content-btn">
+      <input type="number" value="1">
+      <app-btn-accent [btnText]="'Add to Cart'" [textColor]="'primary'"></app-btn-accent>
+    </div>
+  </div>
+</section>

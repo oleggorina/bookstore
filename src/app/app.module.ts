@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -43,6 +45,10 @@ import { AboutBooksComponent } from './pages/about/components/about-books/about-
 import { StoreComponent } from './pages/store/store.component';
 import { StoreProductsComponent } from './pages/store/components/store-products/store-products.component';
 import { ProductStoreComponent } from './components/product-store/product-store.component';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { ProductItemComponent } from './components/product-details/product-item/product-item.component';
+import { ProductDescriptionComponent } from './components/product-details/product-description/product-description.component';
+import { FeaturesComponent } from './components/product-details/features/features.component';
 
 @NgModule({
   declarations: [
@@ -85,12 +91,18 @@ import { ProductStoreComponent } from './components/product-store/product-store.
     AboutBooksComponent,
     StoreComponent,
     StoreProductsComponent,
-    ProductStoreComponent
+    ProductStoreComponent,
+    ProductDetailsComponent,
+    ProductItemComponent,
+    ProductDescriptionComponent,
+    FeaturesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    HttpClientModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

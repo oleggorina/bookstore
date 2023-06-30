@@ -1,0 +1,52 @@
+@use "extends" as *;
+@use "variables" as *;
+@use "mixins-media" as *;
+@use "skin" as *;
+
+.description {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  gap: $gap;
+  margin-bottom: calc($gap * 5);
+  &__btns {
+    display: flex;
+    justify-content: center;
+    gap: $gap;
+    @include md {
+      flex-direction: column;
+    }
+    &-item {
+      text-transform: uppercase;
+      font-family: $font-header;
+      font-size: 15px;
+      font-weight: bold;
+      color: $color-primary;
+      padding: 20px 60px;
+      background-color: #F5F8FC;
+      cursor: pointer;
+      transition: all 0.2s ease-in;
+      &:hover {
+        background-color: $color-primary;
+        color: white;
+      }
+      &.active {
+        background-color: $color-primary;
+        color: white;
+      }
+    }
+  }
+  &__content {
+    &-info {
+      line-height: 1.7;
+      opacity: 0;
+      animation: info 0.3s forwards;
+      @keyframes info {
+        to {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

@@ -4,5 +4,11 @@ export interface IProduct {
   image: string,
   price: number,
   descr: string,
-  type: string
+  type: string,
+  publisher: string,
+  text: string,
+  isbn: number,
+  language: string,
+  paperback: string,
+  dimensions: string
 }
