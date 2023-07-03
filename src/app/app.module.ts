@@ -49,6 +49,8 @@ import { ProductDetailsComponent } from './components/product-details/product-de
 import { ProductItemComponent } from './components/product-details/product-item/product-item.component';
 import { ProductDescriptionComponent } from './components/product-details/product-description/product-description.component';
 import { FeaturesComponent } from './components/product-details/features/features.component';
+import { ArticleDetailsComponent } from './pages/articles/components/article-details/article-details.component';
+import { QuoteComponent } from './pages/articles/components/quote/quote.component';
 
 @NgModule({
   declarations: [
@@ -95,7 +97,9 @@ import { FeaturesComponent } from './components/product-details/features/feature
     ProductDetailsComponent,
     ProductItemComponent,
     ProductDescriptionComponent,
-    FeaturesComponent
+    FeaturesComponent,
+    ArticleDetailsComponent,
+    QuoteComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,41 @@
+<app-banner [title]="article.title"></app-banner>
+<section class="details">
+  <div class="details__image">
+    <img src="{{article.image}}" alt="{{article.image}}">
+  </div>
+  <div class="details__date">
+    <h5>{{article.date}}</h5>
+    <div class="separator">/</div>
+    <a href=""><h5>{{article.type}}</h5></a>
+  </div>
+  <div class="details__text">
+    <p>{{article.text}}</p>
+  </div>
+  <div class="details__descr">
+    <div class="details__descr-title">
+      <h4>{{article.descr.title}}</h4>
+    </div>
+    <div class="details__descr-text">
+      <p>{{article.descr.text}}</p>
+    </div>
+    <div class="details__descr-list">
+      <ul>
+        <li *ngFor="let item of article.descr.list | keyvalue">{{item.value}}</li>
+      </ul>
+    </div>
+  </div>
+  <app-quote></app-quote>
+  <div class="details__descr">
+    <div class="details__descr-title">
+      <h4>{{article.descr.title}}</h4>
+    </div>
+    <div class="details__descr-text">
+      <p>{{article.descr.text}}</p>
+    </div>
+    <div class="details__descr-list">
+      <ul>
+        <li *ngFor="let item of article.descr.list | keyvalue">{{item.value}}</li>
+      </ul>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,28 @@
+@use "extends" as *;
+@use "variables" as *;
+@use "mixins-media" as *;
+@use "skin" as *;
+
+.quote {
+  color: white;
+  font-size: 18px;
+  font-family: $font-main;
+  font-weight: 500;
+  letter-spacing: -0.18px;
+  width: 100%;
+  background-color: $color-primary;
+  padding: 50px;
+  text-align: center;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 50px;
+    background-image: url("../../../../../assets/images/quote/Icon.svg");
+    background-size: cover;
+    transform: translateX(20px);
+  }
+}

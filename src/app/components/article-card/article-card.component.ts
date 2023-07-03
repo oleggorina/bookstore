@@ -8,7 +8,8 @@ import { Component, Input } from '@angular/core';
 export class ArticleCardComponent {
   @Input() image: string = '';
   @Input() title: string = '';
-  @Input() text: string = '';
+  @Input() summary: string = '';
   @Input() author: string = '';
-  date: Date = new Date();
+  @Input() date: string = '';
+  @Input() id: number = 0;
 }

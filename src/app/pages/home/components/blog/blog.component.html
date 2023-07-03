@@ -5,7 +5,7 @@
   </div>
   <div class="blog__content">
     <div class="blog__content-item" *ngFor="let article of articleData.slice(-3)">
-      <app-article-card [image]="article.image" [title]="article.title" [text]="article.text" [author]="article.author"></app-article-card>
+      <app-article-card [image]="article.image" [title]="article.title" [summary]="article.text" [author]="article.author"></app-article-card>
     </div>
   </div>
 </section>

@@ -1,1 +1,8 @@
-<p>articles works!</p>
+<app-banner [title]="'Articles'" [text]="'There are many variations of passages of Lorem Ipsum available,  have suffered alteration in some form.'"></app-banner>
+<section class="articles">
+  <div class="articles__wrapper"></div>
+  <div class="articles__item" *ngFor="let article of articles">
+    <app-article-card [title]="article.title" [date]="article.date"
+    [summary]="article.summary" [image]="article.image" [id]="article.id"></app-article-card>
+  </div>
+</section>

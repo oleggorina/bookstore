@@ -3,12 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ArticlesComponent } from './pages/articles/articles.component';
+import { ArticleDetailsComponent } from './pages/articles/components/article-details/article-details.component';
 import { ChangelogComponent } from './pages/changelog/changelog.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LogInComponent } from './pages/log-in/log-in.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { StoreComponent } from './pages/store/store.component';
+import { articleResolver } from './services/article.resolver';
 import { productResolver } from './services/product.resolver';
 
 const routes: Routes = [
@@ -21,7 +23,8 @@ const routes: Routes = [
   {path: 'changelog', component: ChangelogComponent},
   {path: 'store', component: StoreComponent},
   {path: 'not-found', component: NotFoundComponent},
-  {path: 'product-details/:id', component: ProductDetailsComponent, resolve: {data: productResolver}}
+  {path: 'product-details/:id', component: ProductDetailsComponent, resolve: {data: productResolver}},
+  {path: 'article-details/:id', component: ArticleDetailsComponent, resolve: {data: articleResolver}}
 ];
 
 @NgModule({

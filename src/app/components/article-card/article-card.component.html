@@ -7,14 +7,14 @@
       <h5>{{title}}</h5>
     </div>
     <div class="article__content-text">
-      <p>{{text}}</p>
+      <p>{{summary}}</p>
     </div>
     <div class="article__content-controls">
       <div class="link">
-        <app-link [text]="'Read more'" [color]="'primary'"></app-link>
+        <app-link routerLink="/article-details/{{id}}" [text]="'Read more'" [color]="'primary'"></app-link>
       </div>
       <div class="date">
-        <span>{{author}} - {{date | date: 'mediumDate' }}</span>
+        <span>{{date | date: 'mediumDate' }}</span>
       </div>
     </div>
   </div>
