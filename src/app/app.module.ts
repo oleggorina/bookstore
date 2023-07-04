@@ -51,6 +51,8 @@ import { ProductDescriptionComponent } from './components/product-details/produc
 import { FeaturesComponent } from './components/product-details/features/features.component';
 import { ArticleDetailsComponent } from './pages/articles/components/article-details/article-details.component';
 import { QuoteComponent } from './pages/articles/components/quote/quote.component';
+import { ArticleFilterComponent } from './pages/articles/components/article-filter/article-filter.component';
+import { NgOptimizedImage } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -99,14 +101,16 @@ import { QuoteComponent } from './pages/articles/components/quote/quote.componen
     ProductDescriptionComponent,
     FeaturesComponent,
     ArticleDetailsComponent,
-    QuoteComponent
+    QuoteComponent,
+    ArticleFilterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    NgOptimizedImage
   ],
   providers: [],
   bootstrap: [AppComponent]

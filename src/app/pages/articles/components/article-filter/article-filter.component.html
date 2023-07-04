@@ -1,0 +1,27 @@
+<app-banner [title]="'Journal Page'" [text]="'All the articles are filtered based on the type of journal.'"></app-banner>
+<section class="filter">
+  <div class="filter__wrapper"></div>
+  <div class="filter__btns">
+    <div class="filter__btns-btn" [class.active]="isClassic" (click)="activateClassic()"><h5>Classics</h5></div>
+    <div class="filter__btns-btn" [class.active]="isMystery" (click)="activateMystery()"><h5>Detective & Mystery</h5></div>
+    <div class="filter__btns-btn" [class.active]="isIdeology" (click)="activateIdeology()"><h5>Ideology</h5></div>
+  </div>
+  <div class="filter__items" *ngIf="isClassic">
+    <div class="filter__items-item" *ngFor="let article of articles" [class.active]="article.type === 'Classics'">
+      <app-article-card *ngIf="article.type === 'Classics'" [title]="article.title" [date]="article.date"
+    [summary]="article.summary" [image]="article.image" [id]="article.id"></app-article-card>
+    </div>
+  </div>
+  <div class="filter__items" *ngIf="isMystery">
+    <div class="filter__items-item" *ngFor="let article of articles" [class.active]="article.type === 'Detective & Mystery'">
+      <app-article-card *ngIf="article.type === 'Detective & Mystery'" [title]="article.title" [date]="article.date"
+    [summary]="article.summary" [image]="article.image" [id]="article.id"></app-article-card>
+    </div>
+  </div>
+  <div class="filter__items" *ngIf="isIdeology">
+    <div class="filter__items-item" *ngFor="let article of articles" [class.active]="article.type === 'Ideology'">
+      <app-article-card *ngIf="article.type === 'Ideology'" [title]="article.title" [date]="article.date"
+    [summary]="article.summary" [image]="article.image" [id]="article.id"></app-article-card>
+    </div>
+  </div>
+</section>

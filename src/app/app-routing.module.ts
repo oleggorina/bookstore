@@ -4,6 +4,7 @@ import { ProductDetailsComponent } from './components/product-details/product-de
 import { AboutComponent } from './pages/about/about.component';
 import { ArticlesComponent } from './pages/articles/articles.component';
 import { ArticleDetailsComponent } from './pages/articles/components/article-details/article-details.component';
+import { ArticleFilterComponent } from './pages/articles/components/article-filter/article-filter.component';
 import { ChangelogComponent } from './pages/changelog/changelog.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -24,7 +25,8 @@ const routes: Routes = [
   {path: 'store', component: StoreComponent},
   {path: 'not-found', component: NotFoundComponent},
   {path: 'product-details/:id', component: ProductDetailsComponent, resolve: {data: productResolver}},
-  {path: 'article-details/:id', component: ArticleDetailsComponent, resolve: {data: articleResolver}}
+  {path: 'article-details/:id', component: ArticleDetailsComponent, resolve: {data: articleResolver}},
+  {path: 'article-filter', component: ArticleFilterComponent}
 ];
 
 @NgModule({

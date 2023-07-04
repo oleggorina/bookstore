@@ -1,0 +1,50 @@
+@use "extends" as *;
+@use "variables" as *;
+@use "mixins-media" as *;
+@use "skin" as *;
+
+.filter {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: calc($gap * 2);
+  &__btns {
+    display: flex;
+    gap: calc($gap * 2);
+    &-btn {
+      color: $color-primary;
+      cursor: pointer;
+      &:hover,
+      &.active {
+        color: $color-accent;
+      }
+    }
+  }
+  &__items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: calc($gap * 2);
+    @include lg {
+      grid-template-columns: 1fr 1fr;
+    }
+    @include md {
+      grid-template-columns: 1fr;
+    }
+    &-item {
+      display: none;
+      &.active {
+        display: block;
+      }
+    }
+  }
+  &__wrapper {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 100%;
+    background-color: #F4F8FF;
+    z-index: -1;
+  }
+}
