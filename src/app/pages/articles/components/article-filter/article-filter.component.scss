@@ -11,6 +11,9 @@
   &__btns {
     display: flex;
     gap: calc($gap * 2);
+    @include md {
+      flex-direction: column;
+    }
     &-btn {
       color: $color-primary;
       cursor: pointer;

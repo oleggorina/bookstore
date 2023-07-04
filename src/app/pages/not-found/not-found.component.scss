@@ -1,0 +1,57 @@
+@use "extends" as *;
+@use "variables" as *;
+@use "mixins-media" as *;
+@use "skin" as *;
+
+.error {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  @include lg {
+    height: 80vh;
+  }
+  @include md {
+    height: 70vh;
+  }
+  @include sm {
+    height: 71vh;
+  }
+  &__content {
+    max-width: 590px;
+    &-404 {
+      h2 {
+        font-size: 220px;
+        color: $color-primary;
+        text-shadow: 7px 6px 1px rgba(255,202,66,.63);
+        line-height: .9;
+        @include lg {
+          font-size: 170px;
+        }
+        @include md {
+          font-size: 150px;
+        }
+        @include sm {
+          font-size: 100px;
+        }
+      }
+    }
+    &-title {
+      color: $color-primary;
+    }
+  }
+  &__wrapper {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 100%;
+    z-index: -1;
+    background-image: url('../../../assets/images/404/error.svg');
+    background-position: 50% 50%;
+    background-size: cover;
+  }
+}
