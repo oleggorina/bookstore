@@ -1,0 +1,31 @@
+@use "extends" as *;
+@use "variables" as *;
+@use "mixins-media" as *;
+@use "skin" as *;
+
+section {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  .password {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding: 100px;
+    background-color: #F3F3F3;
+    text-align: center;
+    max-width: 750px;
+    gap: $gap;
+    box-shadow: 0 0 10px 0 rgba(27,55,100,.15);
+    @include lg {
+      pad: 60px, 40px;
+    }
+    @include md {
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+    @include sm {
+      padding: 60px 20px 0 20px;
+    }
+  }
+}

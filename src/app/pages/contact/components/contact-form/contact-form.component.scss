@@ -1,0 +1,81 @@
+@use "extends" as *;
+@use "variables" as *;
+@use "mixins-media" as *;
+@use "skin" as *;
+
+.contact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  @include ul {
+    grid-template-columns: 1fr;
+  }
+  &__content {
+    display: flex;
+    gap: $gap;
+    flex-direction: column;
+    &-adress {
+      display: flex;
+      flex-direction: column;
+      gap: $gap;
+      .item {
+        display: flex;
+        justify-content: flex-start;
+        gap: $gap;
+        @include sm {
+          flex-direction: column;
+        }
+        &__image {
+          width: 65px;
+          height: 65px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: $color-primary;
+          img {
+            width: 35px;
+            height: 35px;
+          }
+        }
+      }
+    }
+  }
+  &__form {
+    .form {
+      display: flex;
+      flex-direction: column;
+      gap: $gap;
+      &__row {
+        display: flex;
+        gap: $gap;
+        @include md {
+          flex-direction: column;
+        }
+      }
+      &__col {
+        display: flex;
+        flex-direction: column;
+        gap: $gap;
+      }
+      input {
+        width: 100%;
+      }
+      label {
+        display: flex;
+        justify-content: flex-start;
+        gap: 10px;
+        cursor: pointer;
+        @include sm {
+          flex-direction: column;
+        }
+        input {
+          accent-color: $color-accent;
+          width: 25px;
+        }
+        span {
+          font-size: 17px;
+        }
+      }
+    }
+  }
+}

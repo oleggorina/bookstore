@@ -1,0 +1,41 @@
+@use "extends" as *;
+@use "variables" as *;
+@use "mixins-media" as *;
+@use "skin" as *;
+
+section {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  .changelog {
+    padding: 50px 90px;
+    background-color: #F3F3F3;
+    max-width: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: calc($gap * 2);
+    box-shadow: 0 0 14px 0 rgba(27,55,100,.15);
+    text-align: center;
+    @include sm {
+      padding: 25px 45px;
+    }
+  
+    &__version {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: $font-header;
+      color: $color-primary;
+      font-size: 30px;
+      font-weight: 700;
+      letter-spacing: -0.45px;
+      background-color: $color-accent;
+      border-radius: 50%;
+    }
+  }
+}

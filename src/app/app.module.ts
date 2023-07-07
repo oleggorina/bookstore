@@ -53,6 +53,9 @@ import { ArticleDetailsComponent } from './pages/articles/components/article-det
 import { QuoteComponent } from './pages/articles/components/quote/quote.component';
 import { ArticleFilterComponent } from './pages/articles/components/article-filter/article-filter.component';
 import { NgOptimizedImage } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ContactFormComponent } from './pages/contact/components/contact-form/contact-form.component';
+import { ContactQuestionsComponent } from './pages/contact/components/contact-questions/contact-questions.component';
 
 @NgModule({
   declarations: [
@@ -102,7 +105,9 @@ import { NgOptimizedImage } from '@angular/common';
     FeaturesComponent,
     ArticleDetailsComponent,
     QuoteComponent,
-    ArticleFilterComponent
+    ArticleFilterComponent,
+    ContactFormComponent,
+    ContactQuestionsComponent
   ],
   imports: [
     BrowserModule,
@@ -110,7 +115,8 @@ import { NgOptimizedImage } from '@angular/common';
     FontAwesomeModule,
     HttpClientModule,
     RouterModule,
-    NgOptimizedImage
+    NgOptimizedImage,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

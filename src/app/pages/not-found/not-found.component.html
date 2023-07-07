@@ -10,6 +10,8 @@
     <div class="error__content-text">
       <p>The page you are looking for doesn't exist. Please try searching for some other page, or return to the website's homepage to find what you're looking for.</p>
     </div>
-    <div class="error__content-btn"></div>
+    <div class="error__content-btn" routerLink="/home">
+      <app-btn-accent [btnText]="'Back to Home'" [textColor]="'primary'"></app-btn-accent>
+    </div>
   </div>
 </div>

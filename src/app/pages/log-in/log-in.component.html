@@ -1,1 +1,23 @@
-<p>log-in works!</p>
+<app-banner [title]="'Protected Page'" [text]="'There are many variations of passages of Lorem Ipsum available,  have suffered alteration in some form.'"></app-banner>
+<section>
+  <div class="password">
+    <div class="password__title">
+      <app-title [title]="'Password Protected'"></app-title>
+    </div>
+    <div class="password__text">
+      <p>This page is password protected. If you are the website admin, or have access to this page, please type your password below.</p>
+    </div>
+    <div class="password__form">
+      <form [formGroup]="logForm">
+        <div class="input">
+          <img src="../../../assets/images/form/key.svg" alt="">
+          <input type="password" placeholder="Enter your password">
+        </div>
+      </form>
+    </div>
+    <div class="password__btn">
+      <app-btn-accent [btnText]="'Submit'" [textColor]="'primary'"
+      routerLink="/not-found"></app-btn-accent>
+    </div>
+  </div>
+</section>

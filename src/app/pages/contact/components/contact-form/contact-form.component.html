@@ -1,0 +1,72 @@
+<section>
+  <div class="contact">
+    <div class="contact__content">
+      <div class="contact__content-title">
+        <app-title [linePosition]="'left'" [title]="'Keep in Touch'"></app-title>
+      </div>
+      <div class="contact__content-text">
+        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+      </div>
+      <div class="contact__content-adress">
+        <div class="item">
+          <div class="item__image">
+            <img src="../../../../../assets/images/contacts/home.svg" alt="home">
+          </div>
+          <div class="item__text">
+            <h5>Visit Us :</h5>
+            <p>No: 09a, Downtown, San Dieago, USA.</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item__image">
+            <img src="../../../../../assets/images/contacts/message.svg" alt="">
+          </div>
+          <div class="item__text">
+            <h5>Drop Us :</h5>
+            <p>support@pages.com</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="item__image">
+            <img src="../../../../../assets/images/contacts/phone.svg" alt="">
+          </div>
+          <div class="item__text">
+            <h5>Call Us :</h5>
+            <p>Call: 1-800-123-9999</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact__form">
+      <form>
+        <div class="form">
+          <div class="form__row">
+            <div class="input">
+              <img src="../../../assets/images/form/user.svg" alt="">
+              <input type="password" placeholder="Name">
+            </div>
+            <div class="input">
+              <img src="../../../assets/images/form/mail.svg" alt="">
+              <input type="password" placeholder="Email">
+            </div>
+          </div>
+          <div class="form__col">
+            <div class="input">
+              <img src="../../../assets/images/form/phone.svg" alt="">
+              <input type="password" placeholder="Phone">
+            </div>
+            <div class="input">
+              <img src="../../../assets/images/form/edit.svg" alt="">
+              <textarea name="" id=""rows="10" placeholder="Message"></textarea>
+            </div>
+            <label for="checkbox">
+              <input type="checkbox" id="checkbox" name="checkbox">
+              <span for="checkbox">Keep me up to date with news and offers from time to time by email</span>
+            </label>
+            <app-btn-accent [btnText]="'Send Message'" [textColor]="'primary'"></app-btn-accent>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
