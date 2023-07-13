@@ -44,7 +44,6 @@ import { AboutStoryComponent } from './pages/about/components/about-story/about-
 import { AboutBooksComponent } from './pages/about/components/about-books/about-books.component';
 import { StoreComponent } from './pages/store/store.component';
 import { StoreProductsComponent } from './pages/store/components/store-products/store-products.component';
-import { ProductStoreComponent } from './components/product-store/product-store.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { ProductItemComponent } from './components/product-details/product-item/product-item.component';
 import { ProductDescriptionComponent } from './components/product-details/product-description/product-description.component';
@@ -56,6 +55,7 @@ import { NgOptimizedImage } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ContactFormComponent } from './pages/contact/components/contact-form/contact-form.component';
 import { ContactQuestionsComponent } from './pages/contact/components/contact-questions/contact-questions.component';
+import { CartWindowComponent } from './components/cart/components/cart-window/cart-window.component';
 
 @NgModule({
   declarations: [
@@ -98,7 +98,6 @@ import { ContactQuestionsComponent } from './pages/contact/components/contact-qu
     AboutBooksComponent,
     StoreComponent,
     StoreProductsComponent,
-    ProductStoreComponent,
     ProductDetailsComponent,
     ProductItemComponent,
     ProductDescriptionComponent,
@@ -107,7 +106,8 @@ import { ContactQuestionsComponent } from './pages/contact/components/contact-qu
     QuoteComponent,
     ArticleFilterComponent,
     ContactFormComponent,
-    ContactQuestionsComponent
+    ContactQuestionsComponent,
+    CartWindowComponent
   ],
   imports: [
     BrowserModule,

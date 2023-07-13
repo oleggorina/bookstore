@@ -1,1 +1,19 @@
-<p>contact-questions works!</p>
+<section class="questions">
+  <div class="questions__wrapper"></div>
+  <div class="questions__title">
+    <app-title [title]="'Frequent Questions?'"></app-title>
+  </div>
+  <div class="questions__content">
+    <div class="item" [class.active]="faq.open" *ngFor="let faq of faqs">
+      <div class="item__question" (click)="toggleAccordion(faq)" >
+        <div class="item__question-title">
+          <h5>{{faq.question}}</h5>
+        </div>
+        <div class="item__question-arrow" [class.open]="faq.open"></div>
+      </div>
+      <div class="item__answer" [hidden]="!faq.open">
+        <p>{{faq.answer}}</p>
+      </div>
+    </div>
+  </div>
+</section>

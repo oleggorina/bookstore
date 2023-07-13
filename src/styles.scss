@@ -76,6 +76,9 @@ h5 {
   @include md {
     font-size: 22px;
   }
+  @include sm {
+    font-size: 18px;
+  }
 }
 
 h6 {

@@ -26,7 +26,8 @@ const routes: Routes = [
   {path: 'not-found', component: NotFoundComponent},
   {path: 'product-details/:id', component: ProductDetailsComponent, resolve: {data: productResolver}},
   {path: 'article-details/:id', component: ArticleDetailsComponent, resolve: {data: articleResolver}},
-  {path: 'article-filter', component: ArticleFilterComponent}
+  {path: 'article-filter', component: ArticleFilterComponent},
+  {path: '**', redirectTo: '/not-found'}
 ];
 
 @NgModule({

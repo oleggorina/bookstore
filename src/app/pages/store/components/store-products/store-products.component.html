@@ -1,9 +1,35 @@
 <section class="products">
   <div class="products__items">
     <div class="store__items-item" *ngFor="let item of products">
-      <app-product-store [productTitle]="item.title" [productImage]="item.image"
+      <!-- <app-product-store [productTitle]="item.title" [productImage]="item.image"
       [productPrice]="item.price" [productDescr]="item.descr" [productType]="item.type"
-      [productID]="item.id"></app-product-store>
+      [productID]="item.id"></app-product-store> -->
+      <div class="product">
+        <div class="product__image" routerLink="product-details">
+          <div class="product__image-container">
+            <div class="main">
+              <img src="{{item.image}}" alt="">
+              <img class="audio" [class.active]="item.type === 'Audio'" src="../../../assets/images/product/Audio.svg" alt="">
+              <img class="cd" [class.active]="item.type === 'Audio CD + Printed Book'" src="../../../assets/images/product/cd.svg" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="product__content">
+          <div class="product__content-title">
+            <a routerLink="/product-details/{{item.id}}"><h4>{{item.title}}</h4></a>
+            <span>{{item.price | currency}}</span>
+          </div>
+          <div class="product__content-description">
+            <p>{{item.descr}}</p>
+          </div>
+          <div class="product__content-type">
+            <h5>{{item.type}}</h5>
+          </div>
+          <div class="product__content-btn">
+            <app-btn-primary [btnText]="'Order Today'" (click)="addToCart(item)"></app-btn-primary>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>

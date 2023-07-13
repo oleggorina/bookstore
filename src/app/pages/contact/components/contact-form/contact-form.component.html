@@ -38,29 +38,29 @@
       </div>
     </div>
     <div class="contact__form">
-      <form>
+      <form [formGroup]="contactForm">
         <div class="form">
           <div class="form__row">
             <div class="input">
               <img src="../../../assets/images/form/user.svg" alt="">
-              <input type="password" placeholder="Name">
+              <input type="text" placeholder="Name" formControlName="name">
             </div>
             <div class="input">
               <img src="../../../assets/images/form/mail.svg" alt="">
-              <input type="password" placeholder="Email">
+              <input type="text" placeholder="Email" formControlName="email">
             </div>
           </div>
           <div class="form__col">
             <div class="input">
               <img src="../../../assets/images/form/phone.svg" alt="">
-              <input type="password" placeholder="Phone">
+              <input type="number" placeholder="Phone" formControlName="phone">
             </div>
             <div class="input">
               <img src="../../../assets/images/form/edit.svg" alt="">
-              <textarea name="" id=""rows="10" placeholder="Message"></textarea>
+              <textarea name="message" id=""rows="10" placeholder="Message" formControlName="message"></textarea>
             </div>
             <label for="checkbox">
-              <input type="checkbox" id="checkbox" name="checkbox">
+              <input type="checkbox" id="checkbox" name="checkbox" formControlName="isChecked">
               <span for="checkbox">Keep me up to date with news and offers from time to time by email</span>
             </label>
             <app-btn-accent [btnText]="'Send Message'" [textColor]="'primary'"></app-btn-accent>

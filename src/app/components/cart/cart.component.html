@@ -1,6 +1,10 @@
-<div class="cart">
+<div class="cart" (click)="toggleCartWindow()">
   <fa-icon class="cart__icon" [icon]="icon"></fa-icon>
   <div class="cart__badge">
     <span class="cart__badge-num">{{cartBadge}}</span>
   </div>
+</div>
+
+<div class="cart__window" *ngIf="isActive">
+  <app-cart-window [isActive]="isActive" (updatedIsActive)="handleFlagUpdated($event)"></app-cart-window>
 </div>

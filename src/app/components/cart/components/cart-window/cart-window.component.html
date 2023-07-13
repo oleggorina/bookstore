@@ -1,0 +1,37 @@
+<div class="cart" *ngIf="isActive">
+  <div class="cart__header">
+    <div class="cart__header-title">
+      <h3>Your Cart</h3>
+    </div>
+    <div class="cart__header-icon" (click)="updateFlag()">
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <div class="cart__content">
+      <div class="item" *ngFor="let item of cartItems">
+        <div class="item__image">
+          <img src="{{item.image}}" alt="">
+        </div>
+        <div class="item__content">
+          <div class="item__content-title">
+            <h5>{{item.title}}</h5>
+            <span>{{item.price | currency}}</span>
+          </div>
+          <div class="item__content-count">
+            <input type="number">
+          </div>
+          <div class="item__content-remove">
+            <span (click)="removeItem(item.id)">Remove</span>
+          </div>
+        </div>
+      </div>
+    <div class="content__totals">
+      <div class="content__totals-text">Sub-Total</div>
+      <div class="content__totals-price">60</div>
+    </div>
+    <div class="content__btn">
+      <app-btn-accent [btnText]="'Continue to Checkout'" [textColor]="'primary'"></app-btn-accent>
+    </div>
+  </div>
+</div>

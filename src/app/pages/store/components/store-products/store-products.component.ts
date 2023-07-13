@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { CartService } from 'src/app/services/cart.service';
 import { ProductsService } from 'src/app/services/products.service';
 import { IProduct } from 'src/app/shared/product.class';
 import { PRODUCT_DATA } from 'src/app/shared/product.const';
@@ -13,7 +14,8 @@ export class StoreProductsComponent implements OnInit {
   products: IProduct[] = [];
   productsSubscription!: Subscription;
 
-  constructor(private productsService: ProductsService) {
+  constructor(private productsService: ProductsService,
+    private cartService: CartService) {
   }
 
   ngOnInit(): void {
@@ -24,6 +26,10 @@ export class StoreProductsComponent implements OnInit {
 
   ngOnDestroy() {
     if (this.productsSubscription) this.productsSubscription.unsubscribe();
+  }
+
+  addToCart(product: IProduct): void {
+    this.cartService.addToCart(product);
   }
   
 }
