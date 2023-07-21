@@ -1,9 +1,6 @@
 <section class="products">
   <div class="products__items">
     <div class="store__items-item" *ngFor="let item of products">
-      <!-- <app-product-store [productTitle]="item.title" [productImage]="item.image"
-      [productPrice]="item.price" [productDescr]="item.descr" [productType]="item.type"
-      [productID]="item.id"></app-product-store> -->
       <div class="product">
         <div class="product__image" routerLink="product-details">
           <div class="product__image-container">
@@ -26,7 +23,7 @@
             <h5>{{item.type}}</h5>
           </div>
           <div class="product__content-btn">
-            <app-btn-primary [btnText]="'Order Today'" (click)="addToCart(item)"></app-btn-primary>
+            <app-btn-primary [btnText]="'Order Today'" routerLink="/product-details/{{item.id}}"></app-btn-primary>
           </div>
         </div>
       </div>

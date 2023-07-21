@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { IArticle } from 'src/app/shared/article.class';
+import { IArticle } from 'src/app/shared/interface';
 
 @Component({
   selector: 'app-article-details',

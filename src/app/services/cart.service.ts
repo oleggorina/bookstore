@@ -1,63 +1,108 @@
-import { Injectable, OnDestroy, OnInit } from '@angular/core';
-import { CookieService } from 'ngx-cookie-service';
-import { Subject, Subscription } from 'rxjs';
-import { IProduct } from '../shared/product.class';
+import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
+import { IProduct, ICartItem } from '../shared/interface';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CartService implements OnInit, OnDestroy {
+export class CartService {
 
-  private cartItems: IProduct[] = [];
-  cartItemsChanged = new Subject<IProduct[]>();
+  private cartItems: ICartItem[] = [];
+  cartItemsChanged = new Subject<ICartItem[]>();
   itemRemoved = new Subject<void>();
-  private cartSubscription!: Subscription;
+  cartTotalSubject = new Subject<number>();
+  cartTotal = this.cartTotalSubject.asObservable();
 
-  constructor(private cookieService: CookieService) { }
-
-  ngOnInit(): void {
-    this.loadCartFromCookie();
-    this.cartSubscription = this.cartItemsChanged.subscribe( () => {
-      this.saveCartToCookie();
-    })
-
-    console.log(this.itemRemoved)
+  constructor() {
+    this.loadCartFromLocalStorage();
   }
 
-  ngOnDestroy(): void {
-    this.cartSubscription.unsubscribe();
+  private loadCartFromLocalStorage(): void {
+    const cartData = localStorage.getItem('cart');
+    if (cartData) {
+      this.cartItems = JSON.parse(cartData);
+    } else {
+      this.cartItems = [];
+    }
   }
 
-  private loadCartFromCookie(): void {
-    const cartData = this.cookieService.get('cart');
-    if (cartData) this.cartItems = JSON.parse(cartData)
+  private saveCartToLocalStorage(): void {
+    localStorage.setItem('cart', JSON.stringify(this.cartItems));
   }
 
-  private saveCartToCookie(): void {
-    this.cookieService.set('cart', JSON.stringify(this.cartItems));
+  private calculateSubtotal(item: ICartItem): number {
+    return item.product.price * item.quantity;
+  }
+
+  private updateCartTotal(): void {
+    const total = this.getCartTotal();
+    this.cartTotalSubject.next(total);
+  }
+
+  getCartTotal(): number {
+    let total = 0;
+    for (const item of this.cartItems) {
+      total += this.calculateSubtotal(item);
+    }
+    return total;
   }
   
   addToCart(item: IProduct): void {
-    this.cartItems.push(item);
-    this.cookieService.set('cart', JSON.stringify(this.cartItems));
+    let existingItemIndex = -1;
+
+    for(let i = 0; i < this.cartItems.length; i++) {
+      if (this.cartItems[i].product.id === item.id) {
+        existingItemIndex = i;
+        break;
+      }
+    }
+
+    if (existingItemIndex !== -1) {
+      this.cartItems[existingItemIndex].quantity += 1;
+      console.log('Existing item:', this.cartItems[existingItemIndex]);
+    } else {
+      this.cartItems.push({product: item, quantity: 1});
+      console.log('New item:', item);
+    }
+
+    this.updateCartTotal();
     this.cartItemsChanged.next(this.cartItems);
-    console.log("Add")
+    this.saveCartToLocalStorage();
+    console.log('Updated cart:', this.cartItems);
   }
 
   getCartItems() {
-    const cartItems = this.cookieService.get('cart');
-    return cartItems ? JSON.parse(cartItems) : [];
+    return this.cartItems;
+  }
+
+  updateCartItemQuantity(productId: number, quantity: number): void {
+    const existingItem = this.cartItems.find((cartItem) => {
+      cartItem.product.id === productId;
+    });
+
+    if (existingItem) {
+      existingItem.quantity = quantity;
+      this.cartItemsChanged.next(this.cartItems);
+      this.saveCartToLocalStorage();
+    }
   }
 
   removeItemFromCart(index: number): void {
-    this.cartItems.splice(index, 1);
-    this.saveCartToCookie();
-    this.cartItemsChanged.next(this.cartItems);
-    this.itemRemoved.next();
-    console.log("Remove")
+    if (index >= 0 && index < this.cartItems.length) {
+      this.cartItems.splice(index, 1);
+      this.cartItemsChanged.next(this.cartItems);
+      this.saveCartToLocalStorage();
+      this.updateCartTotal();
+    }
+  }
+
+  getCartItemsCount(): number {
+    return  this.cartItems.length;
   }
 
   clearCart(): void {
-    this.cookieService.delete('cart');
+    this.cartItems = [];
+    this.cartItemsChanged.next(this.cartItems);
+    localStorage.removeItem('cart');
   }
 }

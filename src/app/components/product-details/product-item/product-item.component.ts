@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/internal/Subscription';
-import { IProduct } from 'src/app/shared/product.class';
+import { CartService } from 'src/app/services/cart.service';
+import { IProduct } from 'src/app/shared/interface';
 
 @Component({
   selector: 'app-product-item',
@@ -11,7 +12,8 @@ import { IProduct } from 'src/app/shared/product.class';
 export class ProductItemComponent implements OnInit {
   product!: IProduct;
   productSubscription!: Subscription;
-  constructor(private activatedRoute: ActivatedRoute) {}
+  constructor(private activatedRoute: ActivatedRoute,
+    private cartService: CartService) {}
 
   ngOnInit(): void {
     this.productSubscription = this.activatedRoute.data.subscribe((data) => {
@@ -21,5 +23,9 @@ export class ProductItemComponent implements OnInit {
 
   ngOnDestroy() {
     if (this.productSubscription) this.productSubscription.unsubscribe();
+  }
+
+  addToCart(product: IProduct): void {
+    this.cartService.addToCart(product);
   }
 }

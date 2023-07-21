@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ArticlesService } from 'src/app/services/articles.service';
-import { IArticle } from 'src/app/shared/article.class';
+import { IArticle } from 'src/app/shared/interface';
 
 @Component({
   selector: 'app-articles',

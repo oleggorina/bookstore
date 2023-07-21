@@ -9,26 +9,26 @@
     </div>
   </div>
   <div class="cart__content">
-      <div class="item" *ngFor="let item of cartItems">
+      <div class="item" *ngFor="let item of cartItems; let i = index;">
         <div class="item__image">
-          <img src="{{item.image}}" alt="">
+          <img src="{{item.product.image}}" alt="">
         </div>
         <div class="item__content">
           <div class="item__content-title">
-            <h5>{{item.title}}</h5>
-            <span>{{item.price | currency}}</span>
+            <h5>{{item.product.title}}</h5>
+            <span>{{item.product.price | currency}}</span>
           </div>
           <div class="item__content-count">
-            <input type="number">
+            <input type="number" [(ngModel)]="item.quantity" (input)="updateCartItemQuantity(i)"/>
           </div>
           <div class="item__content-remove">
-            <span (click)="removeItem(item.id)">Remove</span>
+            <span (click)="removeItem(i)">Remove</span>
           </div>
         </div>
       </div>
     <div class="content__totals">
-      <div class="content__totals-text">Sub-Total</div>
-      <div class="content__totals-price">60</div>
+      <div class="content__totals-text">Subtotal</div>
+      <div class="content__totals-price">{{cartTotal | currency}}</div>
     </div>
     <div class="content__btn">
       <app-btn-accent [btnText]="'Continue to Checkout'" [textColor]="'primary'"></app-btn-accent>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IArticleCard } from 'src/app/shared/article-card.class';
+import { IArticleCard } from 'src/app/shared/interface';
 import { ARTICLECARD_DATA } from 'src/app/shared/article-card.const';
 
 @Component({

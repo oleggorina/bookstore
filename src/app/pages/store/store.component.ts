@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { IProduct } from 'src/app/shared/product.class';
 
 @Component({
   selector: 'app-store',

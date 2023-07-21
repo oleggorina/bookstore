@@ -1,4 +1,4 @@
-import { IReviewCard } from "./review-card.class";
+import { IReviewCard } from "./interface";
 
 export const REVIEWCARD_DATA: IReviewCard[] = [
   {

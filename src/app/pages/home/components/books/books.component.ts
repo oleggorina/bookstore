@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ArrayFilterService } from 'src/app/services/array-filter.service';
-import { IProduct } from 'src/app/shared/product.class';
+import { IProduct } from 'src/app/shared/interface';
 import { PRODUCT_DATA } from 'src/app/shared/product.const';
 
 @Component({

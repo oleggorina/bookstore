@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
 import { Subscription } from 'rxjs';
 import { CartService } from 'src/app/services/cart.service';
-import { IProduct } from 'src/app/shared/product.class';
+import { IProduct } from 'src/app/shared/interface';
 
 @Component({
   selector: 'app-cart',
@@ -12,7 +12,7 @@ import { IProduct } from 'src/app/shared/product.class';
 export class CartComponent implements OnInit {
   cartItems: IProduct[] = [];
   icon = faCartShopping;
-  cartBadge = this.cartItems.length;
+  cartBadge = 0;
   isActive: boolean = false;
   
   cartSubscription!: Subscription;
@@ -20,8 +20,14 @@ export class CartComponent implements OnInit {
   constructor(private cartService: CartService) {}
 
   ngOnInit(): void {
-    this.cartItems = this.cartService.getCartItems();
-    this.cartBadge
+    this.cartService.cartItemsChanged.subscribe(() => {
+      this.updateCartItemCount();
+    });
+    this.updateCartItemCount();
+  }
+
+  private updateCartItemCount(): void {
+    this.cartBadge = this.cartService.getCartItemsCount();
   }
 
   toggleCartWindow(): void {

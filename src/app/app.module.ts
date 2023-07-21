@@ -52,7 +52,7 @@ import { ArticleDetailsComponent } from './pages/articles/components/article-det
 import { QuoteComponent } from './pages/articles/components/quote/quote.component';
 import { ArticleFilterComponent } from './pages/articles/components/article-filter/article-filter.component';
 import { NgOptimizedImage } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ContactFormComponent } from './pages/contact/components/contact-form/contact-form.component';
 import { ContactQuestionsComponent } from './pages/contact/components/contact-questions/contact-questions.component';
 import { CartWindowComponent } from './components/cart/components/cart-window/cart-window.component';
@@ -116,7 +116,8 @@ import { CartWindowComponent } from './components/cart/components/cart-window/ca
     HttpClientModule,
     RouterModule,
     NgOptimizedImage,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

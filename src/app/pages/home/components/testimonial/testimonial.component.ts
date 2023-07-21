@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IReviewCard } from 'src/app/shared/review-card.class';
+import { IReviewCard } from 'src/app/shared/interface';
 import { REVIEWCARD_DATA } from 'src/app/shared/review-card.const';
 
 @Component({

@@ -1,4 +1,4 @@
-import { IProduct } from "./product.class";
+import { IProduct } from "./interface";
 
 export const PRODUCT_DATA: IProduct[] = [
   {

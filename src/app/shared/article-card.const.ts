@@ -1,4 +1,4 @@
-import { IArticleCard } from "./article-card.class";
+import { IArticleCard } from "./interface";
 
 export const ARTICLECARD_DATA: IArticleCard[] = [
   {
