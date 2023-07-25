@@ -25,7 +25,7 @@
       <div class="item"><div><p>Dimensions:</p></div><span> {{product.dimensions}}</span></div>
     </div>
     <div class="product__content-btn">
-      <input type="number" value="1">
+      <input type="number" [value]="inputQuantity" (input)="onQuantityChange($event)">
       <app-btn-accent [btnText]="'Add to Cart'" [textColor]="'primary'" (click)="addToCart(product)"></app-btn-accent>
     </div>
   </div>

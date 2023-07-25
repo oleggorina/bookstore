@@ -49,6 +49,7 @@ export class CartWindowComponent implements OnInit {
       const newQuantity = this.cartItems[index].quantity;
       if (newQuantity >= 1) {
         this.cartService.updateCartItemQuantity(this.cartItems[index].product.id, newQuantity);
+        this.cartService.saveCartToLocalStorage();
         this.calculateCartTotal();
       }
     }

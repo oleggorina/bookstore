@@ -1,33 +1,36 @@
 <div class="cart" *ngIf="isActive">
   <div class="cart__header">
     <div class="cart__header-title">
-      <h3>Your Cart</h3>
+      <h4>Your Cart</h4>
     </div>
     <div class="cart__header-icon" (click)="updateFlag()">
       <span></span>
       <span></span>
     </div>
   </div>
-  <div class="cart__content">
+  <div class="cart__empty" *ngIf="cartItems.length < 1">
+    <span>No items found.</span>
+  </div>
+  <div class="cart__content" *ngIf="cartItems.length > 0">
       <div class="item" *ngFor="let item of cartItems; let i = index;">
         <div class="item__image">
           <img src="{{item.product.image}}" alt="">
         </div>
         <div class="item__content">
           <div class="item__content-title">
-            <h5>{{item.product.title}}</h5>
+            <h6>{{item.product.title}}</h6>
             <span>{{item.product.price | currency}}</span>
-          </div>
-          <div class="item__content-count">
-            <input type="number" [(ngModel)]="item.quantity" (input)="updateCartItemQuantity(i)"/>
           </div>
           <div class="item__content-remove">
             <span (click)="removeItem(i)">Remove</span>
           </div>
         </div>
+        <div class="item__count">
+          <input type="number" [(ngModel)]="item.quantity" (input)="updateCartItemQuantity(i)"/>
+        </div>
       </div>
     <div class="content__totals">
-      <div class="content__totals-text">Subtotal</div>
+      <div class="content__totals-text">Total</div>
       <div class="content__totals-price">{{cartTotal | currency}}</div>
     </div>
     <div class="content__btn">
@@ -35,3 +38,4 @@
     </div>
   </div>
 </div>
+<div class="wrapper"></div>

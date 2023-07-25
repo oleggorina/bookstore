@@ -21,12 +21,13 @@ export class CartService {
     const cartData = localStorage.getItem('cart');
     if (cartData) {
       this.cartItems = JSON.parse(cartData);
+      this.cartItemsChanged.next(this.cartItems);
     } else {
       this.cartItems = [];
     }
   }
 
-  private saveCartToLocalStorage(): void {
+  saveCartToLocalStorage(): void {
     localStorage.setItem('cart', JSON.stringify(this.cartItems));
   }
 
@@ -47,28 +48,39 @@ export class CartService {
     return total;
   }
   
-  addToCart(item: IProduct): void {
-    let existingItemIndex = -1;
+  addToCart(item: IProduct, quantity: number = 1): void {
+    // let existingItemIndex = -1;
+    let existingItem = this.cartItems.find((cartItem) => cartItem.product.id === item.id);
 
-    for(let i = 0; i < this.cartItems.length; i++) {
-      if (this.cartItems[i].product.id === item.id) {
-        existingItemIndex = i;
-        break;
-      }
-    }
-
-    if (existingItemIndex !== -1) {
-      this.cartItems[existingItemIndex].quantity += 1;
-      console.log('Existing item:', this.cartItems[existingItemIndex]);
+    if(existingItem) {
+      existingItem.quantity += quantity;
     } else {
-      this.cartItems.push({product: item, quantity: 1});
-      console.log('New item:', item);
+      existingItem = {product: item, quantity};
+      this.cartItems.push(existingItem);
     }
 
     this.updateCartTotal();
     this.cartItemsChanged.next(this.cartItems);
     this.saveCartToLocalStorage();
-    console.log('Updated cart:', this.cartItems);
+    // for(let i = 0; i < this.cartItems.length; i++) {
+    //   if (this.cartItems[i].product.id === item.id) {
+    //     existingItemIndex = i;
+    //     break;
+    //   }
+    // }
+
+    // if (existingItemIndex !== -1) {
+    //   this.cartItems[existingItemIndex].quantity += 1;
+    //   console.log('Existing item:', this.cartItems[existingItemIndex]);
+    // } else {
+    //   this.cartItems.push({product: item, quantity: 1});
+    //   console.log('New item:', item);
+    // }
+
+    // this.updateCartTotal();
+    // this.cartItemsChanged.next(this.cartItems);
+    // this.saveCartToLocalStorage();
+    // console.log('Updated cart:', this.cartItems);
   }
 
   getCartItems() {
@@ -84,6 +96,7 @@ export class CartService {
       existingItem.quantity = quantity;
       this.cartItemsChanged.next(this.cartItems);
       this.saveCartToLocalStorage();
+      this.updateCartTotal();
     }
   }
 
@@ -100,9 +113,9 @@ export class CartService {
     return  this.cartItems.length;
   }
 
-  clearCart(): void {
-    this.cartItems = [];
-    this.cartItemsChanged.next(this.cartItems);
-    localStorage.removeItem('cart');
-  }
+  // clearCart(): void {
+  //   this.cartItems = [];
+  //   this.cartItemsChanged.next(this.cartItems);
+  //   localStorage.removeItem('cart');
+  // }
 }
