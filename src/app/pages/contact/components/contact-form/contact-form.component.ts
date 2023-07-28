@@ -13,11 +13,11 @@ export class ContactFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.contactForm = this.formBuilder.group({
-      name: ['', Validators.required],
+      name: ['', [Validators.required, Validators.minLength(4)]],
       email: ['', [Validators.required, Validators.email]],
       phone: ['', Validators.required],
       message: ['', Validators.required],
-      isChecked: ['', Validators.required]
+      isChecked: ['']
   })
   }
 }

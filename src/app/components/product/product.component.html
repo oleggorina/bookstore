@@ -14,7 +14,7 @@
       <h5>{{productType}}</h5>
     </div>
     <div class="product__content-btn">
-      <app-btn-primary [btnText]="'Order Today'"></app-btn-primary>
+      <app-btn-primary routerLink="/product-details/{{productId}}" [btnText]="'Order Today'"></app-btn-primary>
     </div>
   </div>
 </div>

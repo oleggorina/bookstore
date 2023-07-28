@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
 import { Subscription } from 'rxjs';
 import { CartService } from 'src/app/services/cart.service';

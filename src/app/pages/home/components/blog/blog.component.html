@@ -4,8 +4,8 @@
     <app-title [title]="'Articles & Resources'"></app-title>
   </div>
   <div class="blog__content">
-    <div class="blog__content-item" *ngFor="let article of articleData.slice(-3)">
-      <app-article-card [image]="article.image" [title]="article.title" [summary]="article.text" [author]="article.author"></app-article-card>
+    <div class="blog__content-item" *ngFor="let article of articles.slice(-3)">
+      <app-article-card [image]="article.image" [title]="article.title" [summary]="article.summary" [id]="article.id"></app-article-card>
     </div>
   </div>
 </section>

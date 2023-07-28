@@ -43,21 +43,27 @@
           <div class="form__row">
             <div class="input">
               <img src="../../../assets/images/form/user.svg" alt="">
-              <input type="text" placeholder="Name" formControlName="name">
+              <input type="text" placeholder="Name" formControlName="name" [class.invalid]="contactForm.get('name')?.invalid && contactForm.get('name')?.touched">
+              <div *ngIf="contactForm.get('name')?.hasError('required') && contactForm.get('name')?.touched" class="message">Name is required</div>
+              <div *ngIf="contactForm.get('name')?.hasError('minlength')" class="message">Min length is 4 characters</div>
             </div>
             <div class="input">
               <img src="../../../assets/images/form/mail.svg" alt="">
-              <input type="text" placeholder="Email" formControlName="email">
+              <input type="email" placeholder="Email" formControlName="email" [class.invalid]="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">
+              <div *ngIf="contactForm.get('email')?.hasError('required') && contactForm.get('email')?.touched" class="message">Email is required</div>
+              <div *ngIf="contactForm.get('email')?.hasError('email')" class="message">Email invalid</div>
             </div>
           </div>
           <div class="form__col">
             <div class="input">
               <img src="../../../assets/images/form/phone.svg" alt="">
-              <input type="number" placeholder="Phone" formControlName="phone">
+              <input type="number" placeholder="Phone" formControlName="phone" [class.invalid]="contactForm.get('phone')?.invalid && contactForm.get('phone')?.touched">
+              <div *ngIf="contactForm.get('phone')?.hasError('required') && contactForm.get('phone')?.touched" class="message">Name is required</div>
             </div>
             <div class="input">
               <img src="../../../assets/images/form/edit.svg" alt="">
-              <textarea name="message" id=""rows="10" placeholder="Message" formControlName="message"></textarea>
+              <textarea name="message" id=""rows="10" placeholder="Message" formControlName="message" [class.invalid]="contactForm.get('message')?.invalid && contactForm.get('message')?.touched"></textarea>
+              <div *ngIf="contactForm.get('message')?.hasError('required') && contactForm.get('message')?.touched" class="message">Message is required</div>
             </div>
             <label for="checkbox">
               <input type="checkbox" id="checkbox" name="checkbox" formControlName="isChecked">

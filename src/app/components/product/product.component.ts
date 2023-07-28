@@ -11,4 +11,5 @@ export class ProductComponent {
   @Input() productPrice: number = 0;
   @Input() productDescr: string = '';
   @Input() productType: string = '';
+  @Input() productId: number = 0;
 }

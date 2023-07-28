@@ -18,7 +18,6 @@ import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { ArticlesComponent } from './pages/articles/articles.component';
 import { ProductComponent } from './components/product/product.component';
-import { StyleComponent } from './pages/style/style.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { LogInComponent } from './pages/log-in/log-in.component';
 import { ChangelogComponent } from './pages/changelog/changelog.component';
@@ -72,7 +71,6 @@ import { CartWindowComponent } from './components/cart/components/cart-window/ca
     ContactComponent,
     ArticlesComponent,
     ProductComponent,
-    StyleComponent,
     NotFoundComponent,
     LogInComponent,
     ChangelogComponent,

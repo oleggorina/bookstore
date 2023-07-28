@@ -7,8 +7,12 @@
   </div>
   <div class="subscribe__controls">
     <div class="subscribe__controls-form">
-      <form>
-        <input type="email" placeholder="Your email id...">
+      <form [formGroup]="subscribeForm">
+        <div class="input">
+          <input formControlName="email" type="email" placeholder="Your email id..." [class.invalid]="subscribeForm.get('email')?.invalid && subscribeForm.get('email')?.touched">
+          <div *ngIf="subscribeForm.get('email')?.hasError('required') && subscribeForm.get('email')?.touched" class="message">Email is required</div>
+          <div *ngIf="subscribeForm.get('email')?.hasError('email')" class="message">Email invalid</div>
+        </div>
       </form>
     </div>
     <div class="subscribe__controls-btn">

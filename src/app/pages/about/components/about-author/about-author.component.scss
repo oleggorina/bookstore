@@ -15,7 +15,7 @@
     img {
       width: 100%;
       height: 100%;
-      box-shadow: 0 0 20px 0 rgba(27,55,100,.23);
+      object-fit: cover;
     }
   }
   &__content {
